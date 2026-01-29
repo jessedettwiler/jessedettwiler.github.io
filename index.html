@@ -1,102 +1,105 @@
-<script>
-  // =========================================================
-  // SPLASH (photo-first entrance)
-  // =========================================================
-  const splash = document.getElementById("splash");
-  const enterBtn = document.getElementById("enterBtn");
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C4C – Swiss Folk-Hop Composer</title>
+  <meta name="description" content="Official website of C4C, Swiss Folk-Hop composer blending acoustic folk warmth with lo-fi hip-hop textures. Creator of Folk-Hop." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
 
-  // If splash exists, activate splash mode
-  if (splash) {
-    document.body.classList.add("has-splash", "no-scroll");
-  }
+<body>
 
-  function dismissSplash() {
-    if (!splash || splash.classList.contains("is-hidden")) return;
-    splash.classList.add("is-hidden");
-    document.body.classList.remove("has-splash", "no-scroll");
-  }
+  <!-- SPLASH (first impression) -->
+  <section class="splash" id="splash" aria-label="Entrance photo">
+    <img class="splash-img" src="/images/isenfluh.jpg" alt="Isenfluh, Switzerland" />
+    <a class="splash-menu" href="#site">Enter</a>
 
-  if (enterBtn) enterBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    dismissSplash();
-  });
+    <!-- menu top-right on the photo -->
+    <nav class="splash-nav" aria-label="Menu">
+      <a href="#music" class="navlink">Music</a>
+      <a href="#folk-hop" class="navlink">Folk-Hop</a>
+      <a href="#about" class="navlink">Bio</a>
+      <a href="#contact" class="navlink">Contact</a>
+    </nav>
+  </section>
 
-  if (splash) splash.addEventListener("click", dismissSplash);
+  <!-- SITE -->
+  <header class="header" id="site">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">C4C</a>
+      <nav class="nav" aria-label="Menu">
+        <a href="#music">Music</a>
+        <a href="#folk-hop">Folk-Hop</a>
+        <a href="#about">Bio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  window.addEventListener("wheel", () => dismissSplash(), { passive: true });
-  window.addEventListener("touchstart", () => dismissSplash(), { passive: true });
-  window.addEventListener("keydown", (e) => {
-    if (["Enter", " ", "Escape"].includes(e.key)) dismissSplash();
-  });
+  <main class="wrap" id="top">
+    <section class="hero">
+      <h1 class="hero-title">C4C</h1>
+      <p class="hero-sub">Swiss Folk-Hop composer — acoustic folk warmth + lo-fi hip-hop textures.</p>
 
-  // =========================================================
-  // MODALS (Bio / Folk-Hop / Playlists / Contact / Mobile Menu)
-  // =========================================================
-  const openers = document.querySelectorAll("[data-modal-open]");
+      <div class="actions" id="music">
+        <a class="btn" href="mailto:hello@c4cmusic.com">Email</a>
+        <a class="btn" href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify</a>
+        <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a class="btn" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+      </div>
 
-  function openModalById(id) {
-    const m = document.getElementById(id);
-    if (!m) return;
-    m.classList.add("is-open");
-    m.setAttribute("aria-hidden", "false");
-    document.body.classList.add("no-scroll");
+      <p class="note">Warm, organic instrumentals inspired by lakes, mountains, and quiet moments.</p>
+    </section>
 
-    // focus close button for accessibility
-    const closeBtn = m.querySelector("[data-modal-close]");
-    if (closeBtn) closeBtn.focus();
-  }
+    <section class="section" id="folk-hop">
+      <h2>Folk-Hop</h2>
+      <p>Folk-Hop is a gentle meeting between folk culture (Bob Dylan) and lo-fi hip-hop beat legacy (J. Dilla).</p>
+      <p>Warm, human instrumentals built with acoustic strings, folk instruments, and organic hip-hop drums.</p>
+    </section>
 
-  function closeModal(m) {
-    if (!m) return;
-    m.classList.remove("is-open");
-    m.setAttribute("aria-hidden", "true");
+    <section class="section" id="about">
+      <h2>Bio</h2>
+      <p>C4C is the artistic identity of Jesse Aymon Dettwiler. The name appeared in 2017 during early Folk-Hop experiments.</p>
+      <p>Based in French-speaking Switzerland, between lakes and mountains. Music made to calm the mind and feel like fresh air.</p>
+    </section>
 
-    // Remove no-scroll only if splash is gone AND no other modal is open
-    const anyOpen = document.querySelector(".modal.is-open");
-    const splashActive = document.body.classList.contains("has-splash");
-    if (!anyOpen && !splashActive) {
-      document.body.classList.remove("no-scroll");
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <p class="contact-line">For inquiries: <a href="mailto:hello@c4cmusic.com">hello@c4cmusic.com</a></p>
+    </section>
+
+    <footer class="footer">
+      <p>© C4C — Folk-Hop, from Switzerland.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Hide splash once user navigates away (simple + reliable)
+    const splash = document.getElementById("splash");
+
+    function hideSplash() {
+      if (!splash) return;
+      splash.classList.add("is-hidden");
+      document.body.style.overflow = "";
     }
-  }
 
-  // Open modal buttons
-  openers.forEach(btn => {
-    btn.addEventListener("click", () => {
-      openModalById(btn.dataset.modalOpen);
+    // lock scroll while splash visible
+    document.body.style.overflow = "hidden";
+
+    // Any click or scroll hides splash
+    splash.addEventListener("click", hideSplash);
+    window.addEventListener("wheel", hideSplash, { passive: true });
+    window.addEventListener("touchstart", hideSplash, { passive: true });
+    window.addEventListener("keydown", (e) => {
+      if (["Enter", " ", "Escape"].includes(e.key)) hideSplash();
     });
-  });
 
-  // Close modal: any element with data-modal-close
-  document.addEventListener("click", (e) => {
-    const closeEl = e.target.closest("[data-modal-close]");
-    if (!closeEl) return;
+    // If user clicks a menu link on splash, hide splash (and let anchor scroll happen)
+    document.querySelectorAll(".splash a").forEach(a => {
+      a.addEventListener("click", () => setTimeout(hideSplash, 0));
+    });
+  </script>
 
-    const modal = closeEl.closest(".modal");
-    closeModal(modal);
-  });
-
-  // Also close modal if you click on a link inside the menu modal
-  // (we add data-modal-close on those links, but this is extra safety)
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest("a[data-modal-close]");
-    if (!link) return;
-
-    const modal = link.closest(".modal");
-    closeModal(modal);
-  });
-
-  // ESC closes the topmost open modal (and doesn't break splash)
-  document.addEventListener("keydown", (e) => {
-    if (e.key !== "Escape") return;
-    const open = document.querySelector(".modal.is-open");
-    if (open) closeModal(open);
-  });
-
-  // Prevent background scroll on iOS when modal is open
-  document.addEventListener("touchmove", (e) => {
-    const anyOpen = document.querySelector(".modal.is-open");
-    if (anyOpen || document.body.classList.contains("has-splash")) {
-      e.preventDefault();
-    }
-  }, { passive: false });
-</script>
+</body>
+</html>
