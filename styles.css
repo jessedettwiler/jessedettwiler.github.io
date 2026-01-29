@@ -152,3 +152,11 @@ p{ margin:10px 0; max-width:74ch; }
   .splash-nav{ top:12px; right:12px; gap:10px; }
   .navlink{ font-size:.88rem; padding:6px 8px; }
 }
+/* Splash nav: desktop vs mobile */
+.nav-mobile{ display:none; }
+
+@media (max-width: 640px){
+  .nav-desktop{ display:none; }
+  .nav-mobile{ display:inline-flex; }
+}
+
