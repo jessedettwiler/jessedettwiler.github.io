@@ -308,6 +308,19 @@ p{ margin:10px 0; max-width:74ch; }
   html{
   scroll-behavior: smooth;
 }
+html, body{
+  height: 100%;
+}
+
+body{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.splash,
+.main-content{           /* mets la classe de ta section noire ici */
+  scroll-snap-align: start;
+}
 
 
 
