@@ -287,22 +287,21 @@ p{ margin:10px 0; max-width:74ch; }
   .nav-right a{
     diplay:none;
   }
-}
-  /* 1) La home prend tout l'écran */
-.plah{
+  /* SPLASH (HOME) — plein écran, mais PAS fixed */
+.splash{
   min-height: 100vh;
-  diplay: flex;
-  align-item: center;
-  jutify-content: center;
-  poition: relative;
+  position: relative;
+  background: #000;
+  overflow: hidden;
 }
-
-/* i tu utilie une image <img> dan la plah */
-.plah-img{
+.splash-img{
   width: 100%;
   height: 100vh;
-  object-fit: cover;  /* évite déformation */
-  diplay: block;
+  object-fit: cover;
+  display: block;
+  opacity: .96;
+}
+
 }
   html{
   croll-behavior: mooth;
