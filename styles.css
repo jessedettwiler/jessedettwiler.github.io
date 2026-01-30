@@ -9,15 +9,14 @@
 }
 
 *{ box-izing:border-box; }
-html,body{ height:100%; }
+html,body{ height:100%; margin:0; }
+
 body{
   padding-top: 80px;
-}
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  font-family: ui-an-erif, ytem-ui, -apple-ytem, egoe UI, Roboto, Helvetica, Arial;
-  line-height:1.65;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  line-height: 1.65;
 }
 
 .wrap{ max-width:var(--max); margin:0 auto; padding:0 22px; }
