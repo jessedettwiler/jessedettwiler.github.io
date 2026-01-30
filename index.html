@@ -1,94 +1,84 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>C4C – Swiss Folk-Hop Composer</title>
-  <meta name="description" content="Official website of C4C, Swiss Folk-Hop composer blending acoustic folk warmth with lo-fi hip-hop textures. Creator of Folk-Hop." />
-  <link rel="stylesheet" href="/styles.css" />
+  <title>C4C — Folk-Hop composer / producer</title>
+  <meta name="description" content="Swiss Folk-Hop composer & producer. Acoustic lo-fi, indie folk beats, nature-inspired instrumentals." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <<header class="site-header">
-  <a href="/" class="brand">C4C</a>
-  <nav class="nav-right">
-    <a href="#music">Music</a>
-    <a href="#folk-hop">Folk-Hop</a>
-    <a href="#about">Bio</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Go to top">C4C</a>
 
+    <nav class="nav-right" aria-label="Menu">
+      <a href="#music">Music</a>
+      <a href="#folk-hop">Folk-Hop</a>
+      <a href="#about">Bio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- SPLASH (first impression) -->
-  <section class="splash" id="splash" aria-label="Entrance photo">
-    <img class="splash-img" src="/images/hero2.jpg" alt="Isenfluh, Switzerland" />
-    .splash{
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
+  <section class="splash" id="top" aria-label="Home">
+    <!-- Mets ton image ici (même fichier que ton repo) -->
+    <img class="splash-img" src="isenfluh.jpg" alt="Nature landscape" />
 
-.splash-img{
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-}
-html{ scroll-behavior: smooth; }
+    <div class="splash-overlay" aria-hidden="true"></div>
 
+    <div class="splash-content">
+      <h1>C4C</h1>
+      <p>Swiss-made acoustic lo-fi + folk-hop instrumentals — breathe deeper.</p>
 
-    <!-- menu top-right on the photo -->
-  
-  <!-- Desktop links -->
-  <a href="#music" class="navlink nav-desktop">Music</a>
-  <a href="#folk-hop" class="navlink nav-desktop">Folk-Hop</a>
-  <a href="#about" class="navlink nav-desktop">Bio</a>
-  <a href="#contact" class="navlink nav-desktop">Contact</a>
+      <div class="splash-cta">
+        <a class="btn" href="#music">Explore</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
 
-  <!-- Mobile: single Menu button -->
-  <a href="#site" class="navlink nav-mobile">Menu</a>
-</nav>
-    
+    <a class="scroll-down" href="#music" aria-label="Scroll down">⌄</a>
   </section>
 
-  <main class="wrap" id="top">
-    <section class="hero">
-      <h1 class="hero-title">C4C</h1>
-      <p class="hero-sub">Swiss Folk-Hop composer — acoustic folk warmth + lo-fi hip-hop textures.</p>
-
-      <div class="actions" id="music">
-        <a class="btn" href="mailto:hello@c4cmusic.com">Email</a>
-        <a class="btn" href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify</a>
-        <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-        <a class="btn" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube</a>
+  <main class="page">
+    <section class="section" id="music">
+      <div class="card">
+        <h2>Music</h2>
+        <p>Latest releases, playlists, and the core sound: organic guitar, soft drums, nature warmth.</p>
+        <div class="links">
+          <a href="#" class="pill">Spotify</a>
+          <a href="#" class="pill">Apple Music</a>
+          <a href="#" class="pill">YouTube</a>
+        </div>
       </div>
-
-      <p class="note">Warm, organic instrumentals inspired by lakes, mountains, and quiet moments.</p>
     </section>
 
     <section class="section" id="folk-hop">
-      <h2>Folk-Hop</h2>
-      <p>Folk-Hop is a gentle meeting between folk culture (Bob Dylan) and lo-fi hip-hop beat legacy (J. Dilla).</p>
-      <p>Warm, human instrumentals built with acoustic strings, folk instruments, and organic hip-hop drums.</p>
+      <div class="card">
+        <h2>Folk-Hop Radio</h2>
+        <p>A network of playlists promoting Folk-Hop: acoustic lo-fi, indie folk beats, nature-inspired instrumentals.</p>
+        <div class="links">
+          <a href="#" class="pill">Spotify Profile</a>
+          <a href="#" class="pill">Instagram</a>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="about">
-      <h2>Bio</h2>
-      <p>C4C is the artistic identity of Jesse Aymon Dettwiler. The name appeared in 2017 during early Folk-Hop experiments.</p>
-      <p>Based in French-speaking Switzerland, between lakes and mountains. Music made to calm the mind and feel like fresh air.</p>
+      <div class="card">
+        <h2>Bio</h2>
+        <p>
+          Composer/producer based in Switzerland. Built a Folk-Hop universe across albums and 250+ originals.
+          300M+ streams worldwide.
+        </p>
+        <div class="links">
+          <span class="pill">Folk-Hop (since 2020)</span>
+          <span class="pill">Based in Switzerland</span>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="contact">
-      <h2>Contact</h2>
-      <p class="contact-line">For inquiries: <a href="mailto:hello@c4cmusic.com">hello@c4cmusic.com</a></p>
-    </section>
-
-    <footer class="footer">
-      <p>© C4C — Folk-Hop, from Switzerland.</p>
-    </footer>
-  </main>
-
-</body>
-</html>
+      <div class="card">
+        <h2>Contact</h2>
+        <p>For inquiries (OS
