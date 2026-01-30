@@ -191,5 +191,18 @@ p{ margin:10px 0; max-width:74ch; }
   color:#fff;
   background:rgba(255,255,255,0.15);
 }
+.site-header{
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999999;
+  outline: 2px solid red;         /* DEBUG */
+  background: rgba(0,0,0,0.15);   /* DEBUG */
+}
+
 
 
