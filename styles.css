@@ -238,6 +238,11 @@ p{ margin:10px 0; max-width:74ch; }
   background: rgba(255,255,255,0.16);
   border-color: rgba(255,255,255,0.16);
 }
+@media (max-width: 640px){
+  .nav-right a{
+    display:none; /* on cache les liens sur mobile (on ajoutera un ☰ après) */
+  }
+}
 
 
 
