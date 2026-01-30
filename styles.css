@@ -173,11 +173,13 @@ p{ margin:10px 0; max-width:74ch; }
   z-index:9999;
 }
 
-.logo{
+.brand{
   text-decoration:none;
   font-size:22px;
   letter-spacing:0.05em;
   color:#fff;
+  position:relative;
+  z-index:999999;
 }
 
 .nav-right a{
