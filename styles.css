@@ -201,6 +201,43 @@ p{ margin:10px 0; max-width:74ch; }
   align-items:center;
   z-index:999999;
 }
+.site-header{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:9999;
+}
+
+.brand{
+  text-decoration:none;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:0.08em;
+  font-size:14px;
+  opacity:0.9;
+}
+
+.nav-right a{
+  display:inline-block;
+  margin-left:10px;
+  padding:7px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:13px;
+  color:#fff;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px);
+}
+
+.nav-right a:hover{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.16);
+}
 
 
 
