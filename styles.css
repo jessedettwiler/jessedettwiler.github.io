@@ -289,6 +289,23 @@ p{ margin:10px 0; max-width:74ch; }
     display:none;
   }
 }
+  /* 1) La home prend tout l'écran */
+.splash{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Si tu utilises une image <img> dans la splash */
+.splash-img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;  /* évite déformation */
+  display: block;
+}
+
 
 
 
