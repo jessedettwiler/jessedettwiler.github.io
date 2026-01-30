@@ -200,8 +200,6 @@ p{ margin:10px 0; max-width:74ch; }
   justify-content:space-between;
   align-items:center;
   z-index:999999;
-  outline: 2px solid red;         /* DEBUG */
-  background: rgba(0,0,0,0.15);   /* DEBUG */
 }
 
 
