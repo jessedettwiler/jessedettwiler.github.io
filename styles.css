@@ -136,4 +136,83 @@ body{
 }
 
 .btn:hover{
-  background: rgba(255,255,255,0.20)
+  background: rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.20);
+}
+
+.btn.ghost{
+  background: transparent;
+}
+
+.scroll-down{
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.14);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+
+/* PAGE CONTENT */
+.page{
+  padding: 60px 18px 40px;
+}
+
+.section{
+  padding: 26px 0;
+}
+
+.card{
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+.card h2{
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.links{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.footer{
+  padding-top: 18px;
+  text-align: center;
+  opacity: .85;
+}
+
+/* MOBILE CLEAN: on garde uniquement C4C (menu hidden) */
+@media (max-width: 640px){
+  .nav-right a{ display: none; }
+  .splash-content{ bottom: 70px; }
+}
