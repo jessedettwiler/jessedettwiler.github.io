@@ -10,16 +10,16 @@
 
 <body>
 
-  <header class="site-header">
+  <<header class="site-header">
   <a href="/" class="brand">C4C</a>
-
   <nav class="nav-right">
     <a href="#music">Music</a>
     <a href="#folk-hop">Folk-Hop</a>
-    <a href="#bio">Bio</a>
+    <a href="#about">Bio</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
+
 
   <!-- SPLASH (first impression) -->
   <section class="splash" id="splash" aria-label="Entrance photo">
@@ -38,19 +38,6 @@
 </nav>
     
   </section>
-
-  <!-- SITE -->
-  <header class="header" id="site">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top">C4C</a>
-      <nav class="nav" aria-label="Menu">
-        <a href="#music">Music</a>
-        <a href="#folk-hop">Folk-Hop</a>
-        <a href="#about">Bio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
 
   <main class="wrap" id="top">
     <section class="hero">
@@ -88,33 +75,6 @@
       <p>© C4C — Folk-Hop, from Switzerland.</p>
     </footer>
   </main>
-
-  <script>
-    // Hide splash once user navigates away (simple + reliable)
-    const splash = document.getElementById("splash");
-
-    function hideSplash() {
-      if (!splash) return;
-      splash.classList.add("is-hidden");
-      document.body.style.overflow = "";
-    }
-
-    // lock scroll while splash visible
-    document.body.style.overflow = "hidden";
-
-    // Any click or scroll hides splash
-    splash.addEventListener("click", hideSplash);
-    window.addEventListener("wheel", hideSplash, { passive: true });
-    window.addEventListener("touchstart", hideSplash, { passive: true });
-    window.addEventListener("keydown", (e) => {
-      if (["Enter", " ", "Escape"].includes(e.key)) hideSplash();
-    });
-
-    // If user clicks a menu link on splash, hide splash (and let anchor scroll happen)
-    document.querySelectorAll(".splash a").forEach(a => {
-      a.addEventListener("click", () => setTimeout(hideSplash, 0));
-    });
-  </script>
 
 </body>
 </html>
