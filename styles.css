@@ -11,6 +11,8 @@
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
+  padding-top: 80px;
+}
   margin:0;
   background:var(--bg);
   color:var(--fg);
@@ -242,7 +244,52 @@ p{ margin:10px 0; max-width:74ch; }
   .nav-right a{
     display:none; /* on cache les liens sur mobile (on ajoutera un ☰ après) */
   }
+.site-header{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  z-index:10000;
 }
+
+.brand{
+  text-decoration:none;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:0.08em;
+  font-size:14px;
+  opacity:0.9;
+}
+
+.nav-right a{
+  display:inline-block;
+  margin-left:10px;
+  padding:7px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:13px;
+  color:#fff;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px);
+}
+
+.nav-right a:hover{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.16);
+}
+@media (max-width: 640px){
+  .nav-right a{
+    display:none;
+  }
+}
+
 
 
 
