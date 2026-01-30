@@ -159,4 +159,32 @@ p{ margin:10px 0; max-width:74ch; }
   .nav-desktop{ display:none; }
   .nav-mobile{ display:inline-flex; }
 }
+.site-header{
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:9999;
+}
+
+.logo{
+  text-decoration:none;
+  font-size:22px;
+  letter-spacing:0.05em;
+  color:#fff;
+}
+
+.nav-right a{
+  margin-left:12px;
+  padding:6px 12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:14px;
+  color:#fff;
+  background:rgba(255,255,255,0.15);
+}
+
 
