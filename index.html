@@ -9,29 +9,32 @@
 </head>
 
 <script>
-  const contactCard = document.querySelector("#contact .card");
+  // Mark JS as enabled (so CSS animation rules apply)
+  document.documentElement.classList.add("js");
 
-  if (contactCard && "IntersectionObserver" in window) {
+  const contactSection = document.querySelector("#contact");
+
+  if (contactSection && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
-            contactCard.classList.add("is-visible");
-            observer.disconnect(); // une seule fois
+            contactSection.classList.add("is-visible");
+            observer.disconnect();
+            break;
           }
-        });
+        }
       },
       {
-        root: null,
         threshold: 0,
-        rootMargin: "-100% 0px 0px 0px"
-        // ↑ déclenche seulement après 1 viewport complet
+        rootMargin: "-100% 0px 0px 0px" // déclenche après ~1 écran de scroll
       }
     );
 
-    observer.observe(contactCard);
-  } else if (contactCard) {
-    contactCard.classList.add("is-visible");
+    observer.observe(contactSection);
+  } else if (contactSection) {
+    // Fallback: just show it
+    contactSection.classList.add("is-visible");
   }
 </script>
 
