@@ -8,23 +8,29 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-  <script>
-  // Fade-in contact card when it enters viewport
+<script>
   const contactCard = document.querySelector("#contact .card");
 
   if (contactCard && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          contactCard.classList.add("is-visible");
-          observer.disconnect(); // animate once
-        }
-      });
-    }, { threshold: 0.25 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            contactCard.classList.add("is-visible");
+            observer.disconnect(); // une seule fois
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: "-100% 0px 0px 0px"
+        // ↑ déclenche seulement après 1 viewport complet
+      }
+    );
 
     observer.observe(contactCard);
   } else if (contactCard) {
-    // Fallback: just show it
     contactCard.classList.add("is-visible");
   }
 </script>
