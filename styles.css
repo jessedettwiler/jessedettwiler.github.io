@@ -276,4 +276,31 @@ body{
     transform: none;
   }
 }
+/* Par défaut: la bulle est visible (fallback safe) */
+#contact .card{
+  opacity: 1;
+  transform: none;
+}
+
+/* Si JS est actif, on active l'animation (on cache au départ) */
+html.js #contact .card{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+/* Quand #contact devient visible, on affiche la bulle */
+html.js #contact.is-visible .card{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect accessibilité */
+@media (prefers-reduced-motion: reduce){
+  html.js #contact .card{
+    transition: none;
+    transform: none;
+  }
+}
 
