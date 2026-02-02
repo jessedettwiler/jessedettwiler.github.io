@@ -221,3 +221,17 @@ body{
   .nav-right a{ display: none; }
   .splash-content{ bottom: 70px; }
 }
+/* Fade-in doux de la home */
+.splash{
+  animation: splashFade 1.8s ease-out forwards;
+}
+
+@keyframes splashFade{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
