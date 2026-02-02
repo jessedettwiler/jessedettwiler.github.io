@@ -95,18 +95,20 @@ body{
 
 .splash-content{
   position: absolute;
+  top: 50%;
   left: 18px;
   right: 18px;
-  bottom: 80px;
+  transform: translateY(-50%);
   max-width: 720px;
   margin: 0 auto;
-  padding: 18px 18px;
+  padding: 20px;
   border-radius: 18px;
   background: rgba(0,0,0,.12);
   border: 1px solid rgba(255,255,255,.12);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
+
 
 .splash-content h1{
   margin: 0 0 6px 0;
