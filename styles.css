@@ -246,5 +246,11 @@ body{
   width: 100%;
   max-width: 860px;
 }
+#contact .card{
+  text-align: center;
+}
 
+#contact .links{
+  justify-content: center;  /* centre les boutons */
+}
 
