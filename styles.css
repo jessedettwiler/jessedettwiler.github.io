@@ -243,11 +243,14 @@ body{
 }
 
 #contact .card{
-  width: 100%;
-  max-width: 860px;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
 }
-#contact .card{
-  text-align: center;
+
+#contact .card.is-visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #contact .links{
