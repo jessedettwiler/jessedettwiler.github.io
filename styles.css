@@ -43,12 +43,15 @@ body{
 }
 
 .brand{
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: .10em;
-  font-size: 14px;
-  opacity: .95;
+}
+
+.brand img{
+  height: 26px;          /* ajuste entre 22–30px si besoin */
+  width: auto;
+  opacity: 0.95;
 }
 
 .nav-right a{
