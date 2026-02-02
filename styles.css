@@ -234,4 +234,17 @@ body{
     opacity: 1;
   }
 }
+#contact.section{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;        /* centre vertical */
+  justify-content: center;    /* centre horizontal */
+  padding: 120px 18px;        /* espace pour le header */
+}
+
+#contact .card{
+  width: 100%;
+  max-width: 860px;
+}
+
 
