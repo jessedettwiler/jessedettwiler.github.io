@@ -303,4 +303,8 @@ html.js #contact.is-visible .card{
     transform: none;
   }
 }
+#contact .card{
+  opacity: 1 !important;
+  transform: none !important;
+}
 
