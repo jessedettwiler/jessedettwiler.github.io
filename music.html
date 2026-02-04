@@ -11,17 +11,36 @@
 
   <!-- HEADER -->
   <header class="site-header">
-    <a href="index.html" class="brand" aria-label="C4C home">
-      <img src="images/c4c-logo.png" alt="C4C logo">
-    </a>
+  <a href="index.html" class="brand" aria-label="C4C home">
+    <img src="images/c4c-logo.png" alt="C4C logo">
+  </a>
 
-    <nav class="nav-right" aria-label="Menu">
-      <a href="index.html">Home</a>
-      <a href="music.html">Music</a>
-      <a href="about.html">Bio</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- Desktop nav -->
+  <nav class="nav-right nav-desktop" aria-label="Main menu">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">Bio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile hamburger -->
+  <button class="nav-toggle" type="button"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
+
+  <!-- Mobile dropdown panel -->
+  <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile menu">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">Bio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
   <!-- MAIN CONTENT -->
   <main class="page">
