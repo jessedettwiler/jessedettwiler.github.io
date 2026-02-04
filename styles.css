@@ -655,6 +655,30 @@ html.js #contact.is-visible .card{
   .nav-toggle{ display: grid; }
   .site-header{ position: sticky; }
 }
+/* Desktop default */
+.nav-desktop {
+  display: flex;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+/* Mobile only */
+@media (max-width: 720px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: grid;
+  }
+}
+
 
 
 
