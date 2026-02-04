@@ -385,5 +385,34 @@ html.js #contact.is-visible .card{
 .release-links a:hover{
   border-bottom-color: rgba(255,255,255,.55);
 }
+.dsp-grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.dsp{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(4px);
+
+  transition: background .2s ease, transform .2s ease;
+}
+
+.dsp:hover{
+  background: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+}
+
 
 
