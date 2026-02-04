@@ -569,6 +569,23 @@ html.js #contact.is-visible .card{
     text-align: left;
   }
 }
+.story-photo{
+  margin: 16px 0;
+}
+
+.story-photo img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.story-photo figcaption{
+  margin-top: 6px;
+  font-size: .85rem;
+  opacity: .75;
+}
 
 
 
