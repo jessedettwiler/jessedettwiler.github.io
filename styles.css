@@ -413,6 +413,18 @@ html.js #contact.is-visible .card{
   background: rgba(255,255,255,.18);
   transform: translateY(-1px);
 }
+.bandcamp-cta{
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bandcamp-note{
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
 
 
 
