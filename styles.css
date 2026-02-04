@@ -678,7 +678,15 @@ html.js #contact.is-visible .card{
     display: grid;
   }
 }
+.nav-desktop{ display: flex; }
+.nav-toggle{ display: none; }
+.nav-mobile{ display: none; }
+.nav-mobile.is-open{ display: block; }
 
+@media (max-width: 720px){
+  .nav-desktop{ display: none; }
+  .nav-toggle{ display: grid; }
+}
 
 
 
