@@ -457,6 +457,46 @@ html.js #contact.is-visible .card{
     justify-content: center;
   }
 }
+/* Releases list */
+.release-list{
+  list-style:none;
+  padding:0;
+  margin:12px 0 0;
+}
 
+.release-item{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+
+.release-link{
+  text-decoration:none;
+  font-weight:600;
+}
+
+.release-link:hover{
+  text-decoration:underline;
+}
+
+.release-meta{
+  opacity:.85;
+  white-space:nowrap;
+  font-size:.95rem;
+}
+
+/* Mobile */
+@media (max-width: 560px){
+  .release-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+  .release-meta{
+    white-space:normal;
+  }
+}
 
 
