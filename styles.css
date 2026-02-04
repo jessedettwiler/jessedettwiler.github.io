@@ -498,5 +498,12 @@ html.js #contact.is-visible .card{
     white-space:normal;
   }
 }
+.release-link{
+  color: inherit;
+}
+
+.release-link:hover{
+  text-decoration: underline;
+}
 
 
