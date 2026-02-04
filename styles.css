@@ -425,6 +425,38 @@ html.js #contact.is-visible .card{
   font-size: 0.9rem;
   opacity: 0.85;
 }
+.bandcamp-card{
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.bandcamp-cover{
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.bandcamp-content p{
+  margin-top: 8px;
+}
+
+@media (max-width: 640px){
+  .bandcamp-card{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .bandcamp-cover{
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .bandcamp-cta{
+    justify-content: center;
+  }
+}
 
 
 
