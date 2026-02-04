@@ -505,5 +505,70 @@ html.js #contact.is-visible .card{
 .release-link:hover{
   text-decoration: underline;
 }
+.bio-hero{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.bio-photo img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+.bio-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.facts{
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.facts li{
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.fact-label{
+  opacity: .85;
+}
+
+.fact-value{
+  text-align: right;
+  font-weight: 600;
+}
+
+.bullets{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 720px){
+  .bio-hero{
+    grid-template-columns: 1fr;
+  }
+  .fact-value{
+    text-align: left;
+  }
+}
+
 
 
