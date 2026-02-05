@@ -687,6 +687,8 @@ html.js #contact.is-visible .card{
   .nav-desktop{ display: none; }
   .nav-toggle{ display: grid; }
 }
+.site-header { pointer-events: auto; }
+.nav-toggle, .nav-mobile { pointer-events: auto; }
 
 
 
