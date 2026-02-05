@@ -8,122 +8,90 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<script>
-  // Mark JS as enabled (so CSS animation rules apply)
-  document.documentElement.classList.add("js");
-
-  const contactSection = document.querySelector("#contact");
-
-  if (contactSection && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            contactSection.classList.add("is-visible");
-            observer.disconnect();
-            break;
-          }
-        }
-      },
-      {
-        threshold: 0,
-        rootMargin: "-100% 0px 0px 0px" // déclenche après ~1 écran de scroll
-      }
-    );
-
-    observer.observe(contactSection);
-  } else if (contactSection) {
-    // Fallback: just show it
-    contactSection.classList.add("is-visible");
-  }
-</script>
-
-<script src="main.js" defer></script>
-
-  
 <body>
 
-<header class="site-header">
-  <a href="index.html" class="brand" aria-label="C4C home">
-    <img src="images/c4c-logo.png" alt="C4C logo">
-  </a>
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="C4C home">
+      <img src="images/c4c-logo.png" alt="C4C logo">
+    </a>
 
-  <!-- Desktop menu -->
-  <nav class="nav-right nav-desktop" aria-label="Main menu">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="about.html">Bio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <!-- Desktop menu -->
+    <nav class="nav-right nav-desktop" aria-label="Main menu">
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="about.html">Bio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <!-- Mobile hamburger -->
-  <button
-    class="nav-toggle"
-    type="button"
-    aria-label="Open menu"
-    aria-controls="mobile-menu"
-    aria-expanded="false">
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-  </button>
+    <!-- Mobile hamburger -->
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
 
-  <!-- Mobile dropdown -->
-  <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile menu">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="about.html">Bio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-  <!-- Desktop nav -->
-  <nav class="nav-right nav-desktop" aria-label="Main menu">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="about.html">Bio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <!-- Mobile hamburger -->
-  <button class="nav-toggle" type="button"
-          aria-label="Open menu"
-          aria-controls="mobile-menu"
-          aria-expanded="false">
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-    <span class="nav-toggle-bar"></span>
-  </button>
-
-  <!-- Mobile dropdown panel -->
-  <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile menu">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="about.html">Bio</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-
+    <!-- Mobile dropdown -->
+    <nav id="mobile-menu" class="nav-mobile" aria-label="Mobile menu">
+      <a href="index.html">Home</a>
+      <a href="music.html">Music</a>
+      <a href="about.html">Bio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <section class="splash" id="top" aria-label="Home">
-    <!-- Mets ton image ici (même fichier que ton repo) -->
     <img class="splash-img" src="images/folksoul.jpg" alt="" aria-hidden="true">
-
     <div class="splash-overlay" aria-hidden="true"></div>
-    
-
   </section>
 
- <main class="page">
-  <section class="section" id="contact">
-    <div class="card">
-      <h2>Contact</h2>
-      <p>For any business inquiries (OST / games / collaborations):</p>
-      <div class="links">
-        <a class="pill" href="mailto:info@c4cmusic.com">info@c4cmusic.com</a>
-      </div
-    </div>
-  </section>
-</main>
+  <main class="page">
+    <section class="section" id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>For any business inquiries (OST / games / collaborations):</p>
 
+        <div class="links">
+          <a class="pill" href="mailto:info@c4cmusic.com">info@c4cmusic.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts (always at the end of body) -->
+  <script>
+    // Mark JS as enabled
+    document.documentElement.classList.add("js");
+
+    const contactSection = document.querySelector("#contact");
+
+    if (contactSection && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              contactSection.classList.add("is-visible");
+              observer.disconnect();
+              break;
+            }
+          }
+        },
+        {
+          threshold: 0,
+          rootMargin: "-100% 0px 0px 0px"
+        }
+      );
+
+      observer.observe(contactSection);
+    } else if (contactSection) {
+      contactSection.classList.add("is-visible");
+    }
+  </script>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
