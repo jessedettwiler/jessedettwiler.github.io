@@ -561,3 +561,17 @@ body{
   font-size: .85rem;
   opacity: .75;
 }
+/* ===== Navigation visibility ===== */
+
+/* Desktop (default) */
+.nav-toggle {
+  display: none;
+}
+
+/* Mobile only */
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: grid;
+  }
+}
+
