@@ -1,5 +1,4 @@
 :root{
-  /* Fond unifié (tu peux ajuster la teinte) */
   --bg: #6f8f47;
   --fg: rgba(255,255,255,.92);
 
@@ -25,20 +24,23 @@ body{
   line-height: 1.6;
 }
 
-/* HEADER FIXE */
+/* =========================
+   HEADER (fixed overlay)
+========================= */
 .site-header{
   position: fixed;
   top: 18px;
   left: 18px;
   right: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10000;
-  pointer-events: none; /* pour éviter de bloquer scroll sur overlay */
-}
 
-.site-header a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  z-index: 10000;
+
+  /* IMPORTANT: allow clicks/taps */
   pointer-events: auto;
 }
 
@@ -49,11 +51,12 @@ body{
 }
 
 .brand img{
-  height: 26px;          /* ajuste entre 22–30px si besoin */
+  height: 26px;
   width: auto;
   opacity: 0.95;
 }
 
+/* Desktop nav pills */
 .nav-right a{
   display: inline-block;
   margin-left: 10px;
@@ -72,11 +75,86 @@ body{
   border-color: rgba(255,255,255,0.18);
 }
 
-/* SPLASH HOME */
+/* =========================
+   Mobile menu (hamburger)
+========================= */
+.nav-desktop{ display: flex; }
+.nav-toggle{ display: none; }
+.nav-mobile{ display: none; }
+
+.nav-toggle{
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  z-index: 10001;
+  pointer-events: auto;
+}
+
+.nav-toggle-bar{
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,.92);
+  border-radius: 2px;
+  display: block;
+  margin: 2px 0;
+}
+
+.nav-mobile{
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 16px;
+
+  background: rgba(0,0,0,.25);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+
+  z-index: 10001;
+  pointer-events: auto;
+}
+
+.nav-mobile a{
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: rgba(255,255,255,.95);
+}
+
+.nav-mobile a:hover{
+  background: rgba(255,255,255,.08);
+}
+
+.nav-mobile.is-open{ display: block; }
+
+@media (max-width: 720px){
+  .nav-desktop{ display: none; }
+  .nav-toggle{ display: grid; }
+}
+
+/* =========================
+   SPLASH HOME
+========================= */
 .splash{
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  animation: splashFade 1.8s ease-out forwards;
+}
+
+@keyframes splashFade{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
 }
 
 .splash-img{
@@ -102,16 +180,17 @@ body{
   left: 18px;
   right: 18px;
   transform: translateY(-50%);
+
   max-width: 720px;
   margin: 0 auto;
   padding: 20px;
+
   border-radius: 18px;
   background: rgba(0,0,0,.12);
   border: 1px solid rgba(255,255,255,.12);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
 }
-
 
 .splash-content h1{
   margin: 0 0 6px 0;
@@ -128,6 +207,7 @@ body{
 .splash-cta{
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn{
@@ -167,9 +247,15 @@ body{
   backdrop-filter: blur(10px);
 }
 
-/* PAGE CONTENT */
+/* =========================
+   PAGE CONTENT
+========================= */
 .page{
   padding: 60px 18px 40px;
+}
+
+.page-top{
+  padding-top: 110px;
 }
 
 .section{
@@ -191,6 +277,22 @@ body{
   margin: 0 0 10px 0;
   color: #fff;
   font-size: 20px;
+}
+
+.page-title{
+  margin: 0 0 6px 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.page-subtitle{
+  margin: 0 0 14px 0;
+  opacity: .92;
+}
+
+.muted{
+  opacity: .82;
+  margin-top: 6px;
 }
 
 .links{
@@ -216,122 +318,28 @@ body{
   opacity: .85;
 }
 
-/* MOBILE CLEAN: on garde uniquement C4C (menu hidden) */
-@media (max-width: 640px){
-  .nav-right a{ display: none; }
-  .splash-content{ bottom: 70px; }
-}
-/* Fade-in doux de la home */
-.splash{
-  animation: splashFade 1.8s ease-out forwards;
-}
-
-@keyframes splashFade{
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
+/* =========================
+   CONTACT (safe, no JS dependency)
+========================= */
 #contact.section{
   min-height: 100vh;
   display: flex;
-  align-items: center;        /* centre vertical */
-  justify-content: center;    /* centre horizontal */
-  padding: 120px 18px;        /* espace pour le header */
-}
-
-#contact .card{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-}
-
-#contact .card.is-visible{
-  opacity: 1;
-  transform: translateY(0);
+  align-items: center;
+  justify-content: center;
+  padding: 120px 18px;
 }
 
 #contact .links{
-  justify-content: center;  /* centre les boutons */
-}
-/* Contact card: hidden then fades/slides in */
-#contact .card{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-  will-change: opacity, transform;
+  justify-content: center;
 }
 
-#contact .card.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Respect user preference */
-@media (prefers-reduced-motion: reduce){
-  #contact .card{
-    transition: none;
-    transform: none;
-  }
-}
-/* Par défaut: la bulle est visible (fallback safe) */
-#contact .card{
-  opacity: 1;
-  transform: none;
-}
-
-/* Si JS est actif, on active l'animation (on cache au départ) */
-html.js #contact .card{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 700ms ease, transform 700ms ease;
-  will-change: opacity, transform;
-}
-
-/* Quand #contact devient visible, on affiche la bulle */
-html.js #contact.is-visible .card{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Respect accessibilité */
-@media (prefers-reduced-motion: reduce){
-  html.js #contact .card{
-    transition: none;
-    transform: none;
-  }
-}
-#contact .card{
-  opacity: 1 !important;
-  transform: none !important;
-}
-.page-top{
-  padding-top: 110px; /* évite que le header fixe masque le contenu */
-}
-
-.page-title{
-  margin: 0 0 6px 0;
-  font-size: 28px;
-  color: #fff;
-}
-
-.page-subtitle{
-  margin: 0 0 14px 0;
-  opacity: .92;
-}
-
-.muted{
-  opacity: .82;
-  margin-top: 6px;
-}
-
-/* YouTube responsive */
+/* =========================
+   EMBEDS
+========================= */
 .embed-video{
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 */
+  padding-top: 56.25%;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.12);
@@ -345,46 +353,14 @@ html.js #contact.is-visible .card{
   height: 100%;
 }
 
-/* Spotify embed spacing */
 .embed-spotify{
   margin-top: 12px;
   border: 1px solid rgba(255,255,255,.12);
 }
 
-/* Releases list */
-.release-list{
-  list-style: none;
-  padding: 0;
-  margin: 14px 0 0 0;
-  display: grid;
-  gap: 10px;
-}
-
-.release-list li{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-.release-title{
-  color: #fff;
-  font-weight: 600;
-}
-
-.release-links a{
-  color: rgba(255,255,255,.92);
-  text-decoration: none;
-  margin-left: 10px;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-}
-
-.release-links a:hover{
-  border-bottom-color: rgba(255,255,255,.55);
-}
+/* =========================
+   DSP GRID
+========================= */
 .dsp-grid{
   margin-top: 18px;
   display: grid;
@@ -413,6 +389,10 @@ html.js #contact.is-visible .card{
   background: rgba(255,255,255,.18);
   transform: translateY(-1px);
 }
+
+/* =========================
+   BANDCAMP
+========================= */
 .bandcamp-cta{
   margin-top: 14px;
   display: flex;
@@ -425,6 +405,7 @@ html.js #contact.is-visible .card{
   font-size: 0.9rem;
   opacity: 0.85;
 }
+
 .bandcamp-card{
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -457,7 +438,10 @@ html.js #contact.is-visible .card{
     justify-content: center;
   }
 }
-/* Releases list */
+
+/* =========================
+   RELEASES
+========================= */
 .release-list{
   list-style:none;
   padding:0;
@@ -473,12 +457,13 @@ html.js #contact.is-visible .card{
 }
 
 .release-link{
+  color: inherit;
   text-decoration:none;
   font-weight:600;
 }
 
 .release-link:hover{
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .release-meta{
@@ -487,7 +472,6 @@ html.js #contact.is-visible .card{
   font-size:.95rem;
 }
 
-/* Mobile */
 @media (max-width: 560px){
   .release-item{
     flex-direction:column;
@@ -498,13 +482,10 @@ html.js #contact.is-visible .card{
     white-space:normal;
   }
 }
-.release-link{
-  color: inherit;
-}
 
-.release-link:hover{
-  text-decoration: underline;
-}
+/* =========================
+   BIO
+========================= */
 .bio-hero{
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -547,14 +528,8 @@ html.js #contact.is-visible .card{
   border: 1px solid rgba(255,255,255,.10);
 }
 
-.fact-label{
-  opacity: .85;
-}
-
-.fact-value{
-  text-align: right;
-  font-weight: 600;
-}
+.fact-label{ opacity: .85; }
+.fact-value{ text-align: right; font-weight: 600; }
 
 .bullets{
   margin: 10px 0 0;
@@ -562,13 +537,13 @@ html.js #contact.is-visible .card{
 }
 
 @media (max-width: 720px){
-  .bio-hero{
-    grid-template-columns: 1fr;
-  }
-  .fact-value{
-    text-align: left;
-  }
+  .bio-hero{ grid-template-columns: 1fr; }
+  .fact-value{ text-align: left; }
 }
+
+/* =========================
+   STORY PHOTO
+========================= */
 .story-photo{
   margin: 16px 0;
 }
@@ -586,109 +561,3 @@ html.js #contact.is-visible .card{
   font-size: .85rem;
   opacity: .75;
 }
-/* Header stays visible while scrolling */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Desktop vs Mobile visibility */
-.nav-desktop{ display: flex; }
-.nav-toggle{ display: none; }
-.nav-mobile{ display: none; }
-
-/* Hamburger button */
-.nav-toggle{
-  margin-left: auto;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.18);
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-}
-
-.nav-toggle-bar{
-  width: 18px;
-  height: 2px;
-  background: rgba(255,255,255,.92);
-  border-radius: 2px;
-  display: block;
-  margin: 2px 0;
-}
-
-/* Mobile dropdown panel */
-.nav-mobile{
-  position: absolute;
-  right: 12px;
-  top: calc(100% + 10px);
-  min-width: 200px;
-  padding: 10px;
-  border-radius: 16px;
-  background: rgba(0,0,0,.25);
-  border: 1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 40px rgba(0,0,0,.25);
-}
-
-.nav-mobile a{
-  display: block;
-  padding: 10px 12px;
-  border-radius: 12px;
-  text-decoration: none;
-}
-
-.nav-mobile a:hover{
-  background: rgba(255,255,255,.08);
-}
-
-/* Open state */
-.nav-mobile.is-open{ display: block; }
-
-/* Mobile breakpoint */
-@media (max-width: 720px){
-  .nav-desktop{ display: none; }
-  .nav-toggle{ display: grid; }
-  .site-header{ position: sticky; }
-}
-/* Desktop default */
-.nav-desktop {
-  display: flex;
-}
-
-.nav-toggle {
-  display: none;
-}
-
-.nav-mobile {
-  display: none;
-}
-
-/* Mobile only */
-@media (max-width: 720px) {
-  .nav-desktop {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: grid;
-  }
-}
-.nav-desktop{ display: flex; }
-.nav-toggle{ display: none; }
-.nav-mobile{ display: none; }
-.nav-mobile.is-open{ display: block; }
-
-@media (max-width: 720px){
-  .nav-desktop{ display: none; }
-  .nav-toggle{ display: grid; }
-}
-.site-header { pointer-events: auto; }
-.nav-toggle, .nav-mobile { pointer-events: auto; }
-
-
-
