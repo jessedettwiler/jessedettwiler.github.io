@@ -635,12 +635,6 @@ body{
   width: 26px;   /* ajuste: 24–30 */
   height: 26px;
 }
-/* Discography spacing: separates intro from sections */
-.discography-intro {
-  margin-bottom: 18px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
 
 /* Strong separation between Albums and EPs */
 .discography-divider {
@@ -656,4 +650,8 @@ body{
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
+/* Albums feels like the main section */
+#releases .subhead { font-size: 1.05rem; }
+
+/* EPs a touch lighter (optional: add a class if you want different styling) */
 
