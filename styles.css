@@ -626,3 +626,12 @@ body{
 .home-icons-overlay a:hover img{
   opacity: 1;
 }
+.home-icons-overlay img{
+  width: 18px;
+  height: 18px;
+}
+
+.home-icons-overlay img.icon-bandcamp{
+  width: 26px;   /* ajuste: 24–30 */
+  height: 26px;
+}
