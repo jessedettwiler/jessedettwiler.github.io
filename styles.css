@@ -1,5 +1,5 @@
 :root{
-  --bg: #6f8f47;
+  --bg: #55743D;
   --fg: rgba(255,255,255,.92);
 
   --glass: rgba(0,0,0,.10);
@@ -15,7 +15,9 @@ html{ scroll-behavior: smooth; }
 html, body{
   height: 100%;
   margin: 0;
+  background: var(--bg);
 }
+
 
 body{
   background: var(--bg);
@@ -154,10 +156,11 @@ body{
    SPLASH HOME
 ========================= */
 .splash{
-  min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   overflow: hidden;
   animation: splashFade 1.8s ease-out forwards;
+  background: var(--bg);
 }
 
 @keyframes splashFade{
@@ -167,7 +170,7 @@ body{
 
 .splash-img{
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   object-fit: cover;
   display: block;
 }
