@@ -82,6 +82,7 @@ body{
 .nav-toggle{ display: none; }
 .nav-mobile{ display: none; }
 
+
 .nav-toggle{
   margin-left: auto;
   width: 44px;
@@ -91,11 +92,14 @@ body{
   border: none;
   border-radius: 0;
 
-  display: grid;
   place-items: center;
   cursor: pointer;
-
   padding: 0;
+}
+
+@media (max-width: 720px){
+  .nav-desktop{ display: none; }
+  .nav-toggle{ display: grid; }
 }
 
 
