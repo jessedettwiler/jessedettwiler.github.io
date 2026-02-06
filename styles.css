@@ -579,7 +579,7 @@ body{
 .home-icons-overlay{
   position: absolute;
   left: 50%;
-  top: 64%;                 /* ajuste si besoin: 62% - 68% */
+  top: 60%;                 /* ajuste si besoin: 62% - 68% */
   transform: translateX(-50%);
   display: flex;
   gap: 16px;
