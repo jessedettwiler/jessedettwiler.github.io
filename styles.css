@@ -574,4 +574,29 @@ body{
     display: grid;
   }
 }
+.home-icons-overlay{
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 120px); /* ajuste selon ton image */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 5;
+}
+
+.home-icons-overlay a{
+  display: inline-flex;
+  opacity: 0.6;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.home-icons-overlay a:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.home-icons-overlay img{
+  width: 18px;
+  height: 18px;
+}
 
