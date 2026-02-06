@@ -83,18 +83,21 @@ body{
 .nav-mobile{ display: none; }
 
 .nav-toggle{
+  margin-left: auto;
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.18);
-  border-radius: 12px;
+
+  background: none;
+  border: none;
+  border-radius: 0;
+
   display: grid;
   place-items: center;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  z-index: 10001;
-  pointer-events: auto;
+
+  padding: 0;
 }
+
 
 .nav-toggle-bar{
   width: 18px;
