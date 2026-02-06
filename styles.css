@@ -25,9 +25,10 @@ body{
 }
 
 /* =========================
-   HEADER (fixed overlay)
+   HEADER
 ========================= */
-/* HEADER — desktop default */
+
+/* Desktop default */
 .site-header{
   position: fixed;
   top: 18px;
@@ -45,7 +46,7 @@ body{
   padding: 0;
 }
 
-/* Mobile: full width + safe-area padding */
+/* Mobile only: full width + safe area */
 @media (max-width: 720px){
   .site-header{
     top: 0;
@@ -53,6 +54,15 @@ body{
     right: 0;
 
     padding: calc(env(safe-area-inset-top) + 12px) 18px 12px;
+  }
+}
+
+/* =========================
+   NAV POSITION FIX (mobile)
+========================= */
+@media (max-width: 720px){
+  .nav-mobile{
+    right: 18px;
   }
 }
 
