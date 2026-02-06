@@ -600,3 +600,14 @@ body{
   height: 18px;
 }
 
+@media (max-width: 720px){
+  .home-icons-overlay{
+    top: calc(50% + 150px);
+    gap: 14px;
+  }
+
+  .home-icons-overlay img{
+    width: 17px;
+    height: 17px;
+  }
+}
