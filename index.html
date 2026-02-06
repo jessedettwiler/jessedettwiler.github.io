@@ -10,7 +10,11 @@
 
 <body>
 
-    
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="C4C home">
+      <img src="images/c4c-logo.png" alt="C4C logo">
+    </a>
+
     <!-- Desktop menu -->
     <nav class="nav-right nav-desktop" aria-label="Main menu">
       <a href="index.html">Home</a>
@@ -50,7 +54,6 @@
       <div class="card">
         <h2>Contact</h2>
         <p>For any business inquiries (OST / games / collaborations):</p>
-
         <div class="links">
           <a class="pill" href="mailto:info@c4cmusic.com">info@c4cmusic.com</a>
         </div>
@@ -58,14 +61,7 @@
     </section>
   </main>
 
-  <header class="site-header">
-    <a href="index.html" class="brand" aria-label="C4C home">
-      <img src="images/c4c-logo.png" alt="C4C logo">
-    </a>
-
-  <!-- Scripts (always at the end of body) -->
   <script>
-    // Mark JS as enabled
     document.documentElement.classList.add("js");
 
     const contactSection = document.querySelector("#contact");
@@ -81,10 +77,7 @@
             }
           }
         },
-        {
-          threshold: 0,
-          rootMargin: "-100% 0px 0px 0px"
-        }
+        { threshold: 0, rootMargin: "-100% 0px 0px 0px" }
       );
 
       observer.observe(contactSection);
