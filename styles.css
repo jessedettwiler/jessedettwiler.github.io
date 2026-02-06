@@ -78,30 +78,24 @@ body{
 /* =========================
    Mobile menu (hamburger)
 ========================= */
+
+/* Desktop default */
 .nav-desktop{ display: flex; }
 .nav-toggle{ display: none; }
 .nav-mobile{ display: none; }
-
 
 .nav-toggle{
   margin-left: auto;
   width: 44px;
   height: 44px;
-
   background: none;
   border: none;
-  border-radius: 0;
-
-  place-items: center;
-  cursor: pointer;
   padding: 0;
-}
+  cursor: pointer;
 
-@media (max-width: 720px){
-  .nav-desktop{ display: none; }
-  .nav-toggle{ display: grid; }
+  display: grid;
+  place-items: center;
 }
-
 
 .nav-toggle-bar{
   width: 18px;
@@ -112,6 +106,7 @@ body{
   margin: 2px 0;
 }
 
+/* Mobile dropdown panel */
 .nav-mobile{
   position: absolute;
   right: 0;
@@ -127,7 +122,6 @@ body{
   box-shadow: 0 12px 40px rgba(0,0,0,.25);
 
   z-index: 10001;
-  pointer-events: auto;
 }
 
 .nav-mobile a{
@@ -144,6 +138,7 @@ body{
 
 .nav-mobile.is-open{ display: block; }
 
+/* Mobile only */
 @media (max-width: 720px){
   .nav-desktop{ display: none; }
   .nav-toggle{ display: grid; }
