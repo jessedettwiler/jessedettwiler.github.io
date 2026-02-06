@@ -579,16 +579,16 @@ body{
 .home-icons-overlay{
   position: absolute;
   left: 50%;
-  top: calc(50% + 120px);
+  top: 64%;                 /* ajuste si besoin: 62% - 68% */
   transform: translateX(-50%);
   display: flex;
   gap: 16px;
-  z-index: 5;
+  z-index: 6;
 }
 
 .home-icons-overlay a{
   display: inline-flex;
-  opacity: 0.6;
+  opacity: 0.65;
   transition: opacity .2s ease, transform .2s ease;
 }
 
@@ -600,11 +600,12 @@ body{
 .home-icons-overlay img{
   width: 18px;
   height: 18px;
+  display: block;
 }
 
 @media (max-width: 720px){
   .home-icons-overlay{
-    top: calc(50% + 150px);
+    top: 68%;
     gap: 14px;
   }
 
@@ -613,3 +614,6 @@ body{
     height: 17px;
   }
 }
+
+.splash-overlay{ pointer-events: none; }
+
