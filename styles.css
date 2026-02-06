@@ -635,3 +635,25 @@ body{
   width: 26px;   /* ajuste: 24–30 */
   height: 26px;
 }
+/* Discography spacing: separates intro from sections */
+.discography-intro {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Strong separation between Albums and EPs */
+.discography-divider {
+  border: none;
+  height: 1px;
+  margin: 26px 0;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* Optional: make section headers read more like sections */
+.subhead {
+  margin-top: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
