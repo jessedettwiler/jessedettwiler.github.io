@@ -638,12 +638,21 @@ body{
 .bio-hero{ align-items: start; gap: 28px; }
 .bio-lede{ font-size: 1.05rem; line-height: 1.65; }
 
-.readmore{ margin-top: 10px; }
-.readmore > summary{
+.readmore > summary.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   list-style: none;
   cursor: pointer;
   user-select: none;
 }
-.readmore > summary::-webkit-details-marker{ display:none; }
-.readmore[open] .readmore-content{ margin-top: 12px; }
+.readmore > summary.pill::-webkit-details-marker{ display:none; }
+
+.readmore .less{ display:none; }
+.readmore[open] .more{ display:none; }
+.readmore[open] .less{ display:inline; }
+
+.readmore > summary.pill::after{ content:"+"; opacity:.75; }
+.readmore[open] > summary.pill::after{ content:"–"; }
+.readmore-content{ margin-top: 12px; }
 .readmore-content p{ margin-top: 10px; }
