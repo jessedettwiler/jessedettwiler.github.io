@@ -656,3 +656,50 @@ body{
 .readmore[open] > summary.pill::after{ content:"–"; }
 .readmore-content{ margin-top: 12px; }
 .readmore-content p{ margin-top: 10px; }
+
+/* Desktop only */
+@media (min-width: 900px){
+  .bio-hero{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px; /* colonne photo = largeur fixe */
+    gap: 28px;
+    align-items: start;
+  }
+
+  .bio-photo{
+    justify-self: end; /* pousse la photo à droite */
+  }
+
+  .bio-photo img{
+    width: 360px;      /* taille photo desktop */
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+}
+/* Desktop (texte à gauche, photo à droite) */
+.bio-hero{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-areas: "text photo";
+  gap: 28px;
+  align-items: start;
+}
+
+.bio-text{ grid-area: text; }
+.bio-photo{ grid-area: photo; }
+
+/* Mobile (photo au-dessus du texte) */
+@media (max-width: 860px){
+  .bio-hero{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "text";
+  }
+
+  .bio-photo{
+    justify-self: start; /* ou center si tu préfères */
+  }
+}
