@@ -683,3 +683,30 @@ body{
     height: 24px;
   }
 }
+
+/* =========================
+   BIO — FIX DESKTOP (override)
+   (colle tout en bas du fichier)
+========================= */
+@media (min-width: 861px){
+  .bio-hero{
+    grid-template-columns: minmax(0, 1fr) 420px !important;
+    align-items: start !important;
+  }
+
+  .bio-text{
+    min-width: 0;                /* empêche les comportements bizarres */
+  }
+
+  .bio-photo{
+    justify-self: end !important; /* pousse la photo à droite */
+  }
+
+  .bio-photo img{
+    width: 420px !important;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+}
