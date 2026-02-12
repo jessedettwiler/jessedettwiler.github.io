@@ -635,3 +635,15 @@ body{
   width: 26px;   /* ajuste: 24–30 */
   height: 26px;
 }
+.bio-hero{ align-items: start; gap: 28px; }
+.bio-lede{ font-size: 1.05rem; line-height: 1.65; }
+
+.readmore{ margin-top: 10px; }
+.readmore > summary{
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+.readmore > summary::-webkit-details-marker{ display:none; }
+.readmore[open] .readmore-content{ margin-top: 12px; }
+.readmore-content p{ margin-top: 10px; }
