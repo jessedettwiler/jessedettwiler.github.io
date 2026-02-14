@@ -496,7 +496,7 @@ body{
    BIO
 ========================= */
 
-/* Desktop: texte à gauche, photo à droite (alignée à droite) */
+/* Desktop: texte à gauche,  à droite (alignée à droite) */
 .bio-hero{
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
@@ -608,10 +608,6 @@ body{
 /* =========================
    STORY PHOTO
 ========================= */
-.story-photo{
-  margin: 16px 0;
-}
-
 .story-photo img{
   width: 100%;
   height: auto;
@@ -621,10 +617,14 @@ body{
 }
 
 .story-photo figcaption{
-  margin-top: 6px;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
   font-size: .85rem;
   opacity: .75;
 }
+
+
 
 /* =========================
    HOME ICONS OVERLAY
