@@ -748,4 +748,44 @@ body{
     order: -1; /* photo above text; remove if you want it below */
   }
 }
+/* =========================
+   MILESTONES (clean timeline)
+========================= */
+.milestones-list{
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.milestones-item{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.milestones-date{
+  font-weight: 700;
+  color: rgba(255,255,255,.95);
+  opacity: .95;
+}
+
+.milestones-body p{
+  margin: 0;
+  opacity: .92;
+}
+
+@media (max-width: 640px){
+  .milestones-item{
+    grid-template-columns: 1fr;
+  }
+  .milestones-date{
+    opacity: .85;
+  }
+}
 
