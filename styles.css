@@ -710,3 +710,42 @@ body{
     object-fit: cover;
   }
 }
+/* =========================
+   FOLK-HOP RADIO (image right)
+========================= */
+.fhr-wrap{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 20px;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.fhr-photo{
+  margin: 0;
+  justify-self: end;
+}
+
+.fhr-photo img{
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+
+/* Mobile: photo on top (or bottom if you prefer) */
+@media (max-width: 720px){
+  .fhr-wrap{
+    grid-template-columns: 1fr;
+  }
+  .fhr-photo{
+    justify-self: center;
+    order: -1; /* photo above text; remove if you want it below */
+  }
+}
+
