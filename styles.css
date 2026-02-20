@@ -820,5 +820,15 @@ body{
   line-height: 1.5;
 }
 
-
+.story-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .story-photo img {
+    max-height: 420px;
+  }
+}
 
