@@ -831,4 +831,103 @@ body{
     max-height: 420px;
   }
 }
+/* =========================
+   MILESTONE SLIDER (FIX)
+   Paste at the very bottom
+========================= */
+
+.milestone-slider{
+  margin-top: 14px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.ms-viewport{
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.ms-track{
+  display: flex;
+  transition: transform .35s ease;
+  will-change: transform;
+}
+
+.ms-slide{
+  margin: 0;
+  min-width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.ms-slide img{
+  width: 100%;
+  height: clamp(220px, 40vw, 380px);
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  display: block;
+}
+
+.ms-slide figcaption{
+  padding: 2px 2px 0;
+  font-size: .95rem;
+  line-height: 1.55;
+  opacity: .92;
+}
+
+.ms-nav{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.95);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  backdrop-filter: blur(8px);
+}
+
+.ms-nav:hover{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.18);
+}
+
+.ms-dots{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ms-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.18);
+  opacity: .6;
+  cursor: pointer;
+}
+
+.ms-dot.is-active{
+  opacity: 1;
+  background: rgba(255,255,255,.70);
+}
+
+@media (max-width: 720px){
+  .milestone-slider{
+    grid-template-columns: 1fr;
+  }
+  .ms-prev, .ms-next{
+    display: none; /* mobile: swipe + dots */
+  }
+}
 
