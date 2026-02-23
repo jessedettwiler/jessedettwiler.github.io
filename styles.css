@@ -1255,3 +1255,88 @@ a:hover {
 .ms-slide.is-active figcaption{
   transition-delay: .1s;
 }
+.nav-toggle{
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+
+  padding: 0;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-toggle-bar{
+  width: 22px;
+  height: 2.5px;
+  background: rgba(255,255,255,.92);
+  border-radius: 999px;
+  margin: 4px 0;
+}
+.nav-toggle{
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-toggle:hover{
+  background: rgba(255,255,255,0.15);
+}
+/* =========================
+   HAMBURGER (FINAL)
+========================= */
+
+.nav-toggle{
+  margin-left: auto;
+
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;     /* important pour aligner les barres */
+  justify-content: center;
+  align-items: center;
+  gap: 6px;                   /* remplace les margins */
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
+
+  padding: 0;
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s ease, border-color .15s ease, transform .12s ease;
+}
+
+.nav-toggle:hover{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.nav-toggle:active{
+  transform: scale(0.97);
+}
+
+.nav-toggle:focus{ outline: none; }
+.nav-toggle:focus-visible{
+  outline: 2px solid rgba(255,255,255,.35);
+  outline-offset: 2px;
+}
+
+.nav-toggle-bar{
+  width: 22px;
+  height: 2.5px;
+  background: rgba(255,255,255,.92);
+  border-radius: 999px;
+  display: block;
+  margin: 0;                 /* IMPORTANT: plus de margin ici */
+}
