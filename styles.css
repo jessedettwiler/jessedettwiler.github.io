@@ -272,25 +272,21 @@ body{
 }
 
 .card{
-  max-width: 860px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 22px;
-  border-radius: 20px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
+  padding: 20px;
+
+  border-radius: 18px;
+  background: rgba(0,0,0,.12);
+  border: 1px solid rgba(255,255,255,.12);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
-}
-
-.card h2{
-  margin: 0 0 10px 0;
-  color: #fff;
-  font-size: 20px;
 }
 
 .page-title{
   margin: 0 0 6px 0;
   font-size: 28px;
+  letter-spacing: .01em;
   color: #fff;
 }
 
@@ -299,65 +295,23 @@ body{
   opacity: .92;
 }
 
-.muted{
-  opacity: .82;
-  margin-top: 6px;
-}
-
-.links{
-  margin-top: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.pill{
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.pill:hover{
-  background: rgba(255,255,255,0.18);
-  border-color: rgba(255,255,255,0.18);
-}
-
-.footer{
-  padding-top: 18px;
-  text-align: center;
-  opacity: .85;
-}
-
-/* =========================
-   CONTACT
-========================= */
-#contact.section{
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 18px;
-}
-
-#contact .links{
-  justify-content: center;
-}
+.muted{ opacity: .86; }
 
 /* =========================
    EMBEDS
 ========================= */
-.embed-video{
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
+.embed{
+  margin-top: 12px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.08);
+  background: rgba(255,255,255,.04);
+}
+
+.embed-video{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .embed-video iframe{
@@ -583,61 +537,38 @@ body{
 .readmore[open] .more{ display:none; }
 .readmore[open] .less{ display:inline; }
 
-.readmore > summary.pill::after{ content:"+"; opacity:.75; }
-.readmore[open] > summary.pill::after{ content:"–"; }
+/* Story photo */
+.story-photo{
+  margin: 16px 0 0;
+}
 
-.readmore-content{ margin-top: 12px; }
-.readmore-content p{ margin-top: 10px; }
+.story-photo img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
 
-/* Mobile: photo AU-DESSUS du texte */
-@media (max-width: 860px){
+.story-photo figcaption{
+  margin-top: 8px;
+  opacity: .86;
+  font-size: .95rem;
+}
+
+@media (max-width: 720px){
   .bio-hero{
     grid-template-columns: 1fr;
     grid-template-areas:
       "photo"
       "text";
   }
-
   .bio-photo{
     justify-self: center;
   }
-
-  .bio-photo img{
-    width: min(420px, 100%);
-  }
-
-  .fact-value{ text-align: left; }
-}
-
-/* =========================
-   STORY PHOTO
-========================= */
-.story-photo{
-  margin: 16px 0;
-}
-
-.story-photo img{
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: cover;
-  border-radius: 16px;
-  display: block;
-  border: 1px solid rgba(255,255,255,.12);
-}
-
-@media (max-width: 768px){
-  .story-photo img{
-    max-height: 420px;
-  }
-}
-
-.story-photo figcaption{
-  text-align: center;
-  width: 100%;
-  margin-top: 8px;
-  font-size: .85rem;
-  opacity: .75;
 }
 
 /* =========================
@@ -645,23 +576,11 @@ body{
 ========================= */
 .home-icons-overlay{
   position: absolute;
-  left: 50%;
+  left: 18px;
   top: 70%;
-  transform: translateX(-50%);
   display: flex;
   gap: 16px;
-  z-index: 6;
-}
-
-.home-icons-overlay a{
-  display: inline-flex;
-  opacity: 0.65;
-  transition: opacity .2s ease, transform .2s ease;
-}
-
-.home-icons-overlay a:hover{
-  opacity: 1;
-  transform: translateY(-1px);
+  z-index: 2;
 }
 
 .home-icons-overlay img{
@@ -737,16 +656,12 @@ body{
 }
 
 /* =========================
-   MILESTONE SLIDER (FINAL CLEAN VERSION – 3:2 RATIO)
+   MILESTONE SLIDER (CLEAN + PREMIUM)
 ========================= */
 
 .milestone-slider{
   margin-top: 16px;
   position: relative;
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 14px;
 }
 
 /* Viewport = fenêtre visible */
@@ -789,67 +704,94 @@ body{
   opacity: .95;
 }
 
-/* Titre dans le figcaption */
 .ms-slide figcaption strong{
   display: block;
   font-size: 1.05rem;
   margin-bottom: 4px;
 }
 
-/* Boutons navigation */
-/* Milestone nav buttons */
+/* Arrows overlay (desktop) */
 .ms-nav{
-  width: 44px;
-  height: 44px;
+  position: absolute;
+  top: 33%;               /* centre sur l'image (ajuste 30–40% si besoin) */
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.95);
 
   cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+  opacity: 0.85;
 }
+
+.ms-prev{ left: 14px; }
+.ms-next{ right: 14px; }
 
 .ms-nav:hover{
-  background: rgba(255,255,255,0.18);
-  transform: scale(1.05);
+  background: rgba(0,0,0,0.40);
+  transform: translateY(-50%) scale(1.06);
+  opacity: 1;
 }
 
+/* Optional: if you wrap the icon in <span class="ms-icon"> */
 .ms-icon{
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
-
-  /* micro-ajustement pour centrer parfaitement le glyphe */
   transform: translateY(-1px);
 }
 
-/* Mobile adaptation */
-@media (max-width: 720px){
-  .milestone-slider{
-    grid-template-columns: 1fr;
-  }
-
-  .ms-prev,
-  .ms-next{
-    display: none; /* Swipe + dots uniquement */
-  }
-
-  .ms-slide{
-    gap: 14px;
-  }
-
-  .ms-slide figcaption{
-    font-size: .95rem;
-  }
+/* Dots centered under the slider */
+.ms-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
 }
+
+.ms-dots button{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(255,255,255,0.28);
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.ms-dots button:hover{
+  background: rgba(255,255,255,0.45);
+  transform: scale(1.15);
+}
+
+.ms-dots button.active,
+.ms-dots button[aria-current="true"]{
+  background: rgba(255,255,255,0.9);
+}
+
+/* Mobile: hide arrows (swipe + dots) */
+@media (max-width: 720px){
+  .ms-prev, .ms-next{ display: none; }
+  .ms-slide{ gap: 14px; }
+  .ms-slide figcaption{ font-size: .95rem; }
+}
+
 /* --- Inline Links (Bio text etc.) --- */
 a {
   color: inherit;
@@ -861,9 +803,11 @@ a {
 a:hover {
   text-decoration-color: #ffffff;
 }
+
 .pill {
   border-bottom: none;
 }
+
 /* FAQ Accordion */
 .faq { margin-top: 14px; }
 
@@ -907,84 +851,4 @@ a:hover {
   margin: 8px 0 0 0;
   color: rgba(255,255,255,0.88);
   line-height: 1.65;
-}
-/* ---- Milestone slider layout ---- */
-.milestone-slider{
-  position: relative;
-}
-
-/* place arrows on top of the slides */
-.ms-nav{
-  position: absolute;
-  top: 42%;                 /* ajuste 40–50% selon ton rendu */
-  transform: translateY(-50%);
-  z-index: 5;
-
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.95);
-
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  transition: transform .15s ease, background .15s ease, opacity .15s ease;
-  opacity: 0.85;
-}
-
-.ms-prev{ left: 14px; }
-.ms-next{ right: 14px; }
-
-.ms-nav:hover{
-  background: rgba(0,0,0,0.38);
-  transform: translateY(-50%) scale(1.06);
-  opacity: 1;
-}
-
-/* if you used <span class="ms-icon">…</span> */
-.ms-icon{
-  font-size: 18px;
-  line-height: 1;
-  transform: translateY(-1px);
-}
-/* ---- Dots (pagination) ---- */
-.ms-dots{
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-
-  margin-top: 12px;     /* espace sous le slider */
-}
-
-/* selon ton JS: souvent ce sont des <button> injectés */
-.ms-dots button{
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-
-  border: 0;
-  padding: 0;
-
-  background: rgba(255,255,255,0.28);
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
-}
-
-.ms-dots button:hover{
-  background: rgba(255,255,255,0.45);
-  transform: scale(1.15);
-}
-
-/* classe active (selon ton JS, ça peut être .active ou aria-current) */
-.ms-dots button.active,
-.ms-dots button[aria-current="true"]{
-  background: rgba(255,255,255,0.9);
 }
