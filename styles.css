@@ -1112,3 +1112,21 @@ a:hover {
   gap: 8px;
   padding: 10px 0 0;
 }
+/* Milestones slider: hard stable base */
+.milestone-slider{ position: relative; width: 100%; }
+.ms-viewport{ position: relative; overflow: hidden; width: 100%; border-radius: 18px; }
+.ms-track{ display: flex; flex-wrap: nowrap; gap: 0; will-change: transform; }
+.ms-slide{ flex: 0 0 100%; min-width: 100%; margin: 0; box-sizing: border-box; }
+
+/* arrows overlay (tes classes HTML sont ms-prev/ms-next) */
+.ms-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  display:flex; align-items:center; justify-content:center;
+}
+.ms-prev{ left: 12px; }
+.ms-next{ right: 12px; }
