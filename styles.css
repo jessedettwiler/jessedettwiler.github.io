@@ -972,3 +972,29 @@ a:hover {
   max-width: 720px;     /* ajuste: 640–820 selon ton goût */
   margin: 16px auto 0;  /* centre le slider */
 }
+.ms-viewport{
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+.ms-slide img{
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 420px;   /* ajuste */
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+.ms-viewport{
+  position: relative;
+}
+.ms-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
+.ms-nav.prev{ left: 10px; }
+.ms-nav.next{ right: 10px; }
