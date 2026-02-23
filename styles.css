@@ -797,60 +797,38 @@ body{
 }
 
 /* Boutons navigation */
+/* Milestone nav buttons */
 .ms-nav{
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(255,255,255,.10);
-  color: rgba(255,255,255,.95);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+
   cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-  backdrop-filter: blur(8px);
-  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+  transition: transform .15s ease, background .15s ease;
 }
 
 .ms-nav:hover{
-  background: rgba(255,255,255,.18);
-  border-color: rgba(255,255,255,.25);
+  background: rgba(255,255,255,0.18);
   transform: scale(1.05);
 }
 
-.ms-nav:disabled{
-  opacity: .4;
-  cursor: default;
-  transform: none;
-}
-
-/* Dots navigation */
-.ms-dots{
-  grid-column: 1 / -1;
+.ms-icon{
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
-}
 
-.ms-dot{
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.22);
-  background: rgba(255,255,255,.22);
-  opacity: .6;
-  cursor: pointer;
-  transition: opacity .2s ease, background .2s ease, transform .2s ease;
-}
+  font-size: 20px;
+  line-height: 1;
 
-.ms-dot:hover{
-  transform: scale(1.2);
-}
-
-.ms-dot.is-active{
-  opacity: 1;
-  background: rgba(255,255,255,.80);
+  /* micro-ajustement pour centrer parfaitement le glyphe */
+  transform: translateY(-1px);
 }
 
 /* Mobile adaptation */
