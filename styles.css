@@ -321,6 +321,11 @@ body{
   border: 1px solid rgba(255,255,255,0.12);
 }
 
+.pill:hover{
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.18);
+}
+
 .footer{
   padding-top: 18px;
   text-align: center;
@@ -496,10 +501,9 @@ body{
    BIO
 ========================= */
 
-/* Desktop: texte à gauche,  à droite (alignée à droite) */
 .bio-hero{
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1fr) 420px;
   grid-template-areas: "text photo";
   gap: 28px;
   align-items: start;
@@ -513,7 +517,7 @@ body{
 }
 
 .bio-photo img{
-  width: 360px;
+  width: 420px;
   max-width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
@@ -595,7 +599,7 @@ body{
   }
 
   .bio-photo{
-    justify-self: center; /* mets start si tu préfères aligné à gauche */
+    justify-self: center;
   }
 
   .bio-photo img{
@@ -608,12 +612,24 @@ body{
 /* =========================
    STORY PHOTO
 ========================= */
+.story-photo{
+  margin: 16px 0;
+}
+
 .story-photo img{
   width: 100%;
   height: auto;
+  max-height: 600px;
+  object-fit: cover;
   border-radius: 16px;
   display: block;
   border: 1px solid rgba(255,255,255,.12);
+}
+
+@media (max-width: 768px){
+  .story-photo img{
+    max-height: 420px;
+  }
 }
 
 .story-photo figcaption{
@@ -624,15 +640,13 @@ body{
   opacity: .75;
 }
 
-
-
 /* =========================
    HOME ICONS OVERLAY
 ========================= */
 .home-icons-overlay{
   position: absolute;
   left: 50%;
-  top: 70%;                 /* ajuste si besoin: 62% - 68% */
+  top: 70%;
   transform: translateX(-50%);
   display: flex;
   gap: 16px;
@@ -663,7 +677,7 @@ body{
 }
 
 .home-icons-overlay img.icon-bandcamp{
-  width: 26px;   /* ajuste: 24–30 */
+  width: 26px;
   height: 26px;
 }
 
@@ -684,32 +698,6 @@ body{
   }
 }
 
-/* =========================
-   BIO — FIX DESKTOP (override)
-   (colle tout en bas du fichier)
-========================= */
-@media (min-width: 861px){
-  .bio-hero{
-    grid-template-columns: minmax(0, 1fr) 420px !important;
-    align-items: start !important;
-  }
-
-  .bio-text{
-    min-width: 0;                /* empêche les comportements bizarres */
-  }
-
-  .bio-photo{
-    justify-self: end !important; /* pousse la photo à droite */
-  }
-
-  .bio-photo img{
-    width: 420px !important;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-  }
-}
 /* =========================
    FOLK-HOP RADIO (image right)
 ========================= */
@@ -738,153 +726,82 @@ body{
   background: rgba(255,255,255,.04);
 }
 
-/* Mobile: photo on top (or bottom if you prefer) */
 @media (max-width: 720px){
   .fhr-wrap{
     grid-template-columns: 1fr;
   }
   .fhr-photo{
     justify-self: center;
-    order: -1; /* photo above text; remove if you want it below */
+    order: -1;
   }
 }
+
 /* =========================
-   MILESTONES (clean timeline)
-========================= */
-.milestones-list{
-  list-style: none;
-  padding: 0;
-  margin: 14px 0 0;
-  display: grid;
-  gap: 12px;
-}
-
-.milestones-item{
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 14px;
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.10);
-}
-
-.milestones-date{
-  font-weight: 700;
-  color: rgba(255,255,255,.95);
-  opacity: .95;
-}
-
-.milestones-body p{
-  margin: 0;
-  opacity: .92;
-}
-
-@media (max-width: 640px){
-  .milestones-item{
-    grid-template-columns: 1fr;
-  }
-  .milestones-date{
-    opacity: .85;
-  }
-}
-/* =========================
-   MILESTONE GALLERY
-========================= */
-
-.milestone-gallery{
-  margin-top: 18px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-}
-
-.milestone-item{
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.milestone-item img{
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-}
-
-.milestone-item figcaption{
-  margin-top: 10px;
-  font-size: .95rem;
-  opacity: .9;
-  line-height: 1.5;
-}
-
-.story-photo img {
-  width: 100%;
-  height: auto;
-  max-height: 600px;
-  object-fit: cover;
-}
-@media (max-width: 768px) {
-  .story-photo img {
-    max-height: 420px;
-  }
-}
-/* =========================
-   MILESTONE SLIDER (FIX)
-   Paste at the very bottom
+   MILESTONE SLIDER (FINAL CLEAN VERSION – 3:2 RATIO)
 ========================= */
 
 .milestone-slider{
-  margin-top: 14px;
+  margin-top: 16px;
   position: relative;
   display: grid;
   grid-template-columns: 44px 1fr 44px;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
+/* Viewport = fenêtre visible */
 .ms-viewport{
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
+/* Track = bande horizontale animée */
 .ms-track{
   display: flex;
   transition: transform .35s ease;
   will-change: transform;
 }
 
+/* Slide */
 .ms-slide{
   margin: 0;
   min-width: 100%;
   display: grid;
-  gap: 10px;
+  gap: 16px;
 }
 
+/* IMAGE — Ratio fixe 3:2 */
 .ms-slide img{
   width: 100%;
-  height: clamp(220px, 40vw, 380px);
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
   display: block;
 }
 
+/* Texte sous image */
 .ms-slide figcaption{
-  padding: 2px 2px 0;
-  font-size: .95rem;
-  line-height: 1.55;
-  opacity: .92;
+  padding: 0 2px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: .95;
 }
 
+/* Titre dans le figcaption */
+.ms-slide figcaption strong{
+  display: block;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+/* Boutons navigation */
 .ms-nav{
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.16);
   background: rgba(255,255,255,.10);
   color: rgba(255,255,255,.95);
   cursor: pointer;
@@ -892,42 +809,66 @@ body{
   place-items: center;
   font-size: 26px;
   backdrop-filter: blur(8px);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
 }
 
 .ms-nav:hover{
-  background: rgba(255,255,255,.16);
-  border-color: rgba(255,255,255,.18);
+  background: rgba(255,255,255,.18);
+  border-color: rgba(255,255,255,.25);
+  transform: scale(1.05);
 }
 
+.ms-nav:disabled{
+  opacity: .4;
+  cursor: default;
+  transform: none;
+}
+
+/* Dots navigation */
 .ms-dots{
   grid-column: 1 / -1;
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 14px;
 }
 
 .ms-dot{
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.22);
   opacity: .6;
   cursor: pointer;
+  transition: opacity .2s ease, background .2s ease, transform .2s ease;
+}
+
+.ms-dot:hover{
+  transform: scale(1.2);
 }
 
 .ms-dot.is-active{
   opacity: 1;
-  background: rgba(255,255,255,.70);
+  background: rgba(255,255,255,.80);
 }
 
+/* Mobile adaptation */
 @media (max-width: 720px){
   .milestone-slider{
     grid-template-columns: 1fr;
   }
-  .ms-prev, .ms-next{
-    display: none; /* mobile: swipe + dots */
+
+  .ms-prev,
+  .ms-next{
+    display: none; /* Swipe + dots uniquement */
+  }
+
+  .ms-slide{
+    gap: 14px;
+  }
+
+  .ms-slide figcaption{
+    font-size: .95rem;
   }
 }
-
