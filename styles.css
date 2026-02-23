@@ -998,43 +998,37 @@ a:hover {
 
 .ms-nav.prev{ left: 10px; }
 .ms-nav.next{ right: 10px; }
-/* =========================
-   MILESTONES SLIDER — FIX (FULL WIDTH SLIDES + CLIP + OVERLAY ARROWS)
-========================= */
+/* ===== Milestones slider: FIX FINAL (overlay arrows + full clipping) ===== */
 
 .milestone-slider{
   margin-top: 16px;
   position: relative;
-
   width: 100%;
-  max-width: 720px;     /* ajuste 640–820 si tu veux */
+  max-width: 780px;      /* ajuste */
   margin-left: auto;
   margin-right: auto;
-
-  overflow: hidden;     /* sécurité anti-débordement */
 }
 
-/* Viewport = fenêtre visible */
+/* viewport */
 .ms-viewport{
   position: relative;
   overflow: hidden;
   border-radius: 18px;
-
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
-
-  isolation: isolate;   /* aide le clipping/stacking */
+  isolation: isolate;
 }
 
-/* Track = bande horizontale animée */
+/* track */
 .ms-track{
   display: flex;
   flex-wrap: nowrap;
+  gap: 0;
   transition: transform .35s ease;
   will-change: transform;
 }
 
-/* Slide = 100% du viewport (verrouillé) */
+/* slides = 100% du viewport */
 .ms-slide{
   margin: 0;
   flex: 0 0 100%;
@@ -1043,25 +1037,23 @@ a:hover {
 
   display: grid;
   gap: 16px;
-  padding: 0;
 }
 
-/* IMAGE — Ratio fixe 3:2 + limite de hauteur */
+/* image */
 .ms-slide img{
   width: 100%;
   aspect-ratio: 3 / 2;
-  max-height: 420px;     /* ajuste si tu veux */
+  max-height: 460px;
   object-fit: cover;
   display: block;
-
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.04);
 }
 
-/* Texte sous image */
+/* caption */
 .ms-slide figcaption{
-  padding: 0 8px;
+  padding: 0 10px 12px;
   font-size: 1rem;
   line-height: 1.6;
   opacity: .95;
@@ -1071,14 +1063,13 @@ a:hover {
   hyphens: auto;
 }
 
-/* Titre dans le figcaption */
 .ms-slide figcaption strong{
   display: block;
   font-size: 1.05rem;
   margin-bottom: 4px;
 }
 
-/* Boutons navigation (overlay) */
+/* arrows overlay */
 .ms-nav{
   position: absolute;
   top: 50%;
@@ -1105,29 +1096,19 @@ a:hover {
   transform: translateY(-50%) scale(1.05);
 }
 
-/* Position gauche / droite */
-.ms-nav.prev{ left: 10px; }
-.ms-nav.next{ right: 10px; }
+.ms-prev{ left: 12px; }
+.ms-next{ right: 12px; }
 
-/* Icône dans les boutons */
 .ms-icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   font-size: 20px;
   line-height: 1;
   transform: translateY(-1px);
 }
 
-/* Mobile: évite que les flèches cachent trop l'image */
-@media (max-width: 520px){
-  .ms-nav.prev{ left: 8px; }
-  .ms-nav.next{ right: 8px; }
-}
-
-/* Desktop: un poil plus d'air */
-@media (min-width: 900px){
-  .milestone-slider{ max-width: 780px; }
-  .ms-slide img{ max-height: 460px; }
+/* dots */
+.ms-dots{
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0 0;
 }
