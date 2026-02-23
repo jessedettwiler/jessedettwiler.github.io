@@ -133,3 +133,31 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   // init
   measure();
 });
+/* =========================
+   Milestone dots
+========================= */
+
+.ms-dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ms-dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+
+  background: rgba(255,255,255,.25);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.ms-dot.is-active{
+  background: rgba(255,255,255,.9);
+  transform: scale(1.25);
+}
