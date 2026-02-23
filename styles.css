@@ -883,3 +883,6 @@ a {
 a:hover {
   text-decoration-color: #ffffff;
 }
+.pill {
+  border-bottom: none;
+}
