@@ -873,15 +873,13 @@ body{
   }
 }
 /* --- Inline Links (Bio text etc.) --- */
-
 a {
-  color: #d7e6c2;          /* soft light green, matches your palette */
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-  transition: all 0.2s ease;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.3);
+  text-underline-offset: 3px;
 }
 
 a:hover {
-  color: #ffffff;
-  border-bottom: 1px solid #ffffff;
+  text-decoration-color: #ffffff;
 }
