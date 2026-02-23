@@ -1133,3 +1133,17 @@ a:hover {
 .ms-viewport{ overflow: hidden; }
 .ms-track{ display:flex; flex-wrap:nowrap; gap:0; }
 .ms-slide{ margin:0; }
+.ms-viewport{
+  width: 100% !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.ms-track{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ms-slide{
+  padding: 0 !important;
+}
