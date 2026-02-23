@@ -872,3 +872,16 @@ body{
     font-size: .95rem;
   }
 }
+/* --- Inline Links (Bio text etc.) --- */
+
+a {
+  color: #d7e6c2;          /* soft light green, matches your palette */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
