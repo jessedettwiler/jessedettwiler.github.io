@@ -712,97 +712,6 @@ body{
   }
 }
 
-/* =========================
-   MILESTONE SLIDER (FINAL CLEAN VERSION – 3:2 RATIO)
-========================= */
-
-.milestone-slider{
-  margin-top: 16px;
-  position: relative;
-}
-
-/* Viewport = fenêtre visible */
-.ms-viewport{
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-/* Track = bande horizontale animée */
-.ms-track{
-  display: flex;
-  transition: transform .35s ease;
-  will-change: transform;
-}
-
-/* Slide */
-.ms-slide{
-  margin: 0;
-  min-width: 100%;
-  display: grid;
-  gap: 16px;
-  padding: 0; /* important: pas de padding qui fausse le calcul */
-}
-
-/* Boutons navigation = overlay */
-.ms-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
-
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
-}
-
-/* position gauche/droite */
-.ms-nav.prev{ left: 10px; }
-.ms-nav.next{ right: 10px; }
-
-/* hover ok */
-.ms-nav:hover{
-  background: rgba(255,255,255,0.18);
-  transform: translateY(-50%) scale(1.05);
-}
-
-/* Optionnel: évite que les flèches masquent l’image sur mobile */
-.ms-viewport{
-  padding: 0 54px; /* 44px bouton + ~10px marge */
-  box-sizing: border-box;
-}
-
-/* Si tu préfères ne PAS réduire l'image:
-   supprime le padding ci-dessus et mets plutôt une opacité plus faible aux boutons. */
-
-/* Mobile adaptation */
-@media (max-width: 720px){
-  .milestone-slider{
-    grid-template-columns: 1fr;
-  }
-
-  .ms-prev,
-  .ms-next{
-    display: none; /* Swipe + dots uniquement */
-  }
-
-  .ms-slide{
-    gap: 14px;
-  }
-
-  .ms-slide figcaption{
-    font-size: .95rem;
-  }
-}
 /* --- Inline Links (Bio text etc.) --- */
 a {
   color: inherit;
@@ -817,6 +726,7 @@ a:hover {
 .pill {
   border-bottom: none;
 }
+
 /* FAQ Accordion */
 .faq { margin-top: 14px; }
 
@@ -861,119 +771,7 @@ a:hover {
   color: rgba(255,255,255,0.88);
   line-height: 1.65;
 }
-/* ---- Milestone slider layout ---- */
-.milestone-slider{
-  position: relative;
-}
 
-/* place arrows on top of the slides */
-.ms-nav{
-  position: absolute;
-  top: 42%;                 /* ajuste 40–50% selon ton rendu */
-  transform: translateY(-50%);
-  z-index: 5;
-
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.95);
-
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  transition: transform .15s ease, background .15s ease, opacity .15s ease;
-  opacity: 0.85;
-}
-
-.ms-prev{ left: 14px; }
-.ms-next{ right: 14px; }
-
-.ms-nav:hover{
-  background: rgba(0,0,0,0.38);
-  transform: translateY(-50%) scale(1.06);
-  opacity: 1;
-}
-
-/* if you used <span class="ms-icon">…</span> */
-.ms-icon{
-  font-size: 18px;
-  line-height: 1;
-  transform: translateY(-1px);
-}
-/* ---- Dots (pagination) ---- */
-.ms-dots{
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-
-  margin-top: 12px;     /* espace sous le slider */
-}
-
-/* selon ton JS: souvent ce sont des <button> injectés */
-.ms-dots button{
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-
-  border: 0;
-  padding: 0;
-
-  background: rgba(255,255,255,0.28);
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
-}
-
-.ms-dots button:hover{
-  background: rgba(255,255,255,0.45);
-  transform: scale(1.15);
-}
-
-/* classe active (selon ton JS, ça peut être .active ou aria-current) */
-.ms-dots button.active,
-.ms-dots button[aria-current="true"]{
-  background: rgba(255,255,255,0.9);
-}
-.ms-track{ gap: 0; }
-.ms-slide{ flex: 0 0 100%; }
-.milestone-slider{
-  width: 100%;
-  max-width: 720px;     /* ajuste: 640–820 selon ton goût */
-  margin: 16px auto 0;  /* centre le slider */
-}
-.ms-viewport{
-  overflow: hidden;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-}
-.ms-slide img{
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  max-height: 560px;   /* ajuste */
-  object-fit: cover;
-  display: block;
-  border-radius: 18px;
-}
-.ms-viewport{
-  position: relative;
-}
-.ms-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-}
-
-.ms-nav.prev{ left: 10px; }
-.ms-nav.next{ right: 10px; }
 /* ===== Milestones slider: FIX FINAL (overlay arrows + full clipping) ===== */
 
 .milestone-slider{
@@ -1088,6 +886,7 @@ a:hover {
   gap: 8px;
   padding: 10px 0 0;
 }
+
 /* Milestones slider: hard stable base */
 .milestone-slider{ position: relative; width: 100%; }
 .ms-viewport{ position: relative; overflow: hidden; width: 100%; border-radius: 18px; }
@@ -1123,6 +922,7 @@ a:hover {
 .ms-slide{
   padding: 0 !important;
 }
+
 /* ===== Milestone dots — HARD VISIBLE FIX ===== */
 .ms-dots{
   display: flex !important;
@@ -1159,6 +959,7 @@ a:hover {
   border-color: rgba(255,255,255,.90) !important;
   transform: scale(1.25) !important;
 }
+
 .ms-viewport{ position: relative; }
 
 @media (max-width: 600px){
@@ -1175,6 +976,7 @@ a:hover {
     height: 40px !important;
   }
 }
+
 /* =========================
    Milestone text animation
 ========================= */
@@ -1205,22 +1007,16 @@ a:hover {
 .ms-slide.is-active figcaption{
   transition-delay: .1s;
 }
-/* =========================
-   HAMBURGER (FINAL)
-========================= */
 
 .nav-toggle{
-  margin-left: auto;
-
   width: 48px;
   height: 48px;
   border-radius: 12px;
 
   display: flex;
-  flex-direction: column;     /* important pour aligner les barres */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;                   /* remplace les margins */
 
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.14);
@@ -1230,22 +1026,6 @@ a:hover {
   cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
-  transition: background .15s ease, border-color .15s ease, transform .12s ease;
-}
-
-.nav-toggle:hover{
-  background: rgba(255,255,255,0.16);
-  border-color: rgba(255,255,255,0.18);
-}
-
-.nav-toggle:active{
-  transform: scale(0.97);
-}
-
-.nav-toggle:focus{ outline: none; }
-.nav-toggle:focus-visible{
-  outline: 2px solid rgba(255,255,255,.35);
-  outline-offset: 2px;
 }
 
 .nav-toggle-bar{
@@ -1253,6 +1033,12 @@ a:hover {
   height: 2.5px;
   background: rgba(255,255,255,.92);
   border-radius: 999px;
-  display: block;
-  margin: 0;                 /* IMPORTANT: plus de margin ici */
+  margin: 4px 0;
+}
+.nav-toggle{
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-toggle:hover{
+  background: rgba(255,255,255,0.15);
 }
