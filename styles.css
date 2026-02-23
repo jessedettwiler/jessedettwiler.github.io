@@ -981,7 +981,7 @@ a:hover {
 .ms-slide img{
   width: 100%;
   aspect-ratio: 3 / 2;
-  max-height: 520px;   /* ajuste */
+  max-height: 560px;   /* ajuste */
   object-fit: cover;
   display: block;
   border-radius: 18px;
