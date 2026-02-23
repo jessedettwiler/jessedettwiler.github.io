@@ -1183,3 +1183,19 @@ a:hover {
   border-color: rgba(255,255,255,.90) !important;
   transform: scale(1.25) !important;
 }
+.ms-viewport{ position: relative; }
+
+@media (max-width: 600px){
+  .ms-nav{
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+  .ms-prev{ left: 12px !important; }
+  .ms-next{ right: 12px !important; }
+
+  /* option: smaller on mobile */
+  .ms-nav{
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
