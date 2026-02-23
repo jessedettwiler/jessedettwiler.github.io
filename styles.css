@@ -967,3 +967,8 @@ a:hover {
 }
 .ms-track{ gap: 0; }
 .ms-slide{ flex: 0 0 100%; }
+.milestone-slider{
+  width: 100%;
+  max-width: 720px;     /* ajuste: 640–820 selon ton goût */
+  margin: 16px auto 0;  /* centre le slider */
+}
