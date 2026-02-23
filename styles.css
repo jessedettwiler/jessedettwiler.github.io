@@ -84,27 +84,53 @@ body{
 .nav-toggle{ display: none; }
 .nav-mobile{ display: none; }
 
-/* Hamburger button (style only; hidden on desktop) */
+/* Hamburger button (mobile) */
 .nav-toggle{
   margin-left: auto;
-  width: 44px;
-  height: 44px;
 
-  background: none;
-  border: none;
-  border-radius: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(10px);
 
   padding: 0;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent; /* supprime le flash iOS */
+  transition: background .15s ease, border-color .15s ease, transform .12s ease;
 }
 
+.nav-toggle:hover{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.nav-toggle:active{
+  transform: scale(0.97);
+}
+
+/* focus propre (accessibilité) */
+.nav-toggle:focus{ outline: none; }
+.nav-toggle:focus-visible{
+  outline: 2px solid rgba(255,255,255,.35);
+  outline-offset: 2px;
+}
+
+/* The 3 bars */
 .nav-toggle-bar{
-  width: 18px;
+  width: 24px;
   height: 2px;
   background: rgba(255,255,255,.92);
-  border-radius: 2px;
+  border-radius: 999px;
   display: block;
-  margin: 3px 0;
+  margin: 5px 0;
 }
 
 /* Mobile dropdown panel (anchored to header) */
