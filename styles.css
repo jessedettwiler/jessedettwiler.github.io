@@ -84,55 +84,6 @@ body{
 .nav-toggle{ display: none; }
 .nav-mobile{ display: none; }
 
-/* Hamburger button (mobile) */
-.nav-toggle{
-  margin-left: auto;
-
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(10px);
-
-  padding: 0;
-  cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent; /* supprime le flash iOS */
-  transition: background .15s ease, border-color .15s ease, transform .12s ease;
-}
-
-.nav-toggle:hover{
-  background: rgba(255,255,255,0.16);
-  border-color: rgba(255,255,255,0.18);
-}
-
-.nav-toggle:active{
-  transform: scale(0.97);
-}
-
-/* focus propre (accessibilité) */
-.nav-toggle:focus{ outline: none; }
-.nav-toggle:focus-visible{
-  outline: 2px solid rgba(255,255,255,.35);
-  outline-offset: 2px;
-}
-
-/* The 3 bars */
-.nav-toggle-bar{
-  width: 24px;
-  height: 2px;
-  background: rgba(255,255,255,.92);
-  border-radius: 999px;
-  display: block;
-  margin: 5px 0;
-}
-
 /* Mobile dropdown panel (anchored to header) */
 .nav-mobile{
   position: absolute;
@@ -168,7 +119,6 @@ body{
 /* Mobile only */
 @media (max-width: 720px){
   .nav-desktop{ display: none; }
-  .nav-toggle{ display: block; }
 
   .site-header{
     padding: calc(env(safe-area-inset-top) + 12px) 18px 12px;
@@ -1254,40 +1204,6 @@ a:hover {
 
 .ms-slide.is-active figcaption{
   transition-delay: .1s;
-}
-.nav-toggle{
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(10px);
-
-  padding: 0;
-  cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav-toggle-bar{
-  width: 22px;
-  height: 2.5px;
-  background: rgba(255,255,255,.92);
-  border-radius: 999px;
-  margin: 4px 0;
-}
-.nav-toggle{
-  background: rgba(255,255,255,0.08);
-}
-
-.nav-toggle:hover{
-  background: rgba(255,255,255,0.15);
 }
 /* =========================
    HAMBURGER (FINAL)
