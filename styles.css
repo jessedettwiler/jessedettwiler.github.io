@@ -908,3 +908,50 @@ a:hover {
   color: rgba(255,255,255,0.88);
   line-height: 1.65;
 }
+/* ---- Milestone slider layout ---- */
+.milestone-slider{
+  position: relative;
+}
+
+/* place arrows on top of the slides */
+.ms-nav{
+  position: absolute;
+  top: 42%;                 /* ajuste 40–50% selon ton rendu */
+  transform: translateY(-50%);
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.95);
+
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: transform .15s ease, background .15s ease, opacity .15s ease;
+  opacity: 0.85;
+}
+
+.ms-prev{ left: 14px; }
+.ms-next{ right: 14px; }
+
+.ms-nav:hover{
+  background: rgba(0,0,0,0.38);
+  transform: translateY(-50%) scale(1.06);
+  opacity: 1;
+}
+
+/* if you used <span class="ms-icon">…</span> */
+.ms-icon{
+  font-size: 18px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
