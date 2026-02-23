@@ -77,20 +77,23 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   }
 
   function render(skipAnim = false) {
-    track.style.transition = skipAnim ? "none" : "transform .35s ease";
-    track.style.transform = `translate3d(${-index * slideW}px, 0, 0)`;
+  track.style.transition = skipAnim ? "none" : "transform .35s ease";
+  track.style.transform = `translate3d(${-index * slideW}px, 0, 0)`;
 
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
-    if (prevBtn) prevBtn.disabled = index === 0;
-    if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+  slides.forEach((s, i) => {
+    s.classList.toggle("is-active", i === index);
+  });
 
-    if (skipAnim) {
-      requestAnimationFrame(() => {
-        track.style.transition = "transform .35s ease";
-      });
-    }
+  dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  if (prevBtn) prevBtn.disabled = index === 0;
+  if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+
+  if (skipAnim) {
+    requestAnimationFrame(() => {
+      track.style.transition = "transform .35s ease";
+    });
   }
-
+}
   function goTo(i) {
     index = clamp(i);
     render(false);
