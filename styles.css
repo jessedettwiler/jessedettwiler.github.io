@@ -1130,3 +1130,6 @@ a:hover {
 }
 .ms-prev{ left: 12px; }
 .ms-next{ right: 12px; }
+.ms-viewport{ overflow: hidden; }
+.ms-track{ display:flex; flex-wrap:nowrap; gap:0; }
+.ms-slide{ margin:0; }
