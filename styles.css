@@ -743,10 +743,6 @@ body{
 .milestone-slider{
   margin-top: 16px;
   position: relative;
-  display: grid;
-  grid-template-columns: 44px 1fr 44px;
-  align-items: center;
-  gap: 14px;
 }
 
 /* Viewport = fenêtre visible */
@@ -768,37 +764,16 @@ body{
   min-width: 100%;
   display: grid;
   gap: 16px;
+  padding: 0; /* important: pas de padding qui fausse le calcul */
 }
 
-/* IMAGE — Ratio fixe 3:2 */
-.ms-slide img{
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
-  display: block;
-}
-
-/* Texte sous image */
-.ms-slide figcaption{
-  padding: 0 2px;
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: .95;
-}
-
-/* Titre dans le figcaption */
-.ms-slide figcaption strong{
-  display: block;
-  font-size: 1.05rem;
-  margin-bottom: 4px;
-}
-
-/* Boutons navigation */
-/* Milestone nav buttons */
+/* Boutons navigation = overlay */
 .ms-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -814,22 +789,24 @@ body{
   transition: transform .15s ease, background .15s ease;
 }
 
+/* position gauche/droite */
+.ms-nav.prev{ left: 10px; }
+.ms-nav.next{ right: 10px; }
+
+/* hover ok */
 .ms-nav:hover{
   background: rgba(255,255,255,0.18);
-  transform: scale(1.05);
+  transform: translateY(-50%) scale(1.05);
 }
 
-.ms-icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 20px;
-  line-height: 1;
-
-  /* micro-ajustement pour centrer parfaitement le glyphe */
-  transform: translateY(-1px);
+/* Optionnel: évite que les flèches masquent l’image sur mobile */
+.ms-viewport{
+  padding: 0 54px; /* 44px bouton + ~10px marge */
+  box-sizing: border-box;
 }
+
+/* Si tu préfères ne PAS réduire l'image:
+   supprime le padding ci-dessus et mets plutôt une opacité plus faible aux boutons. */
 
 /* Mobile adaptation */
 @media (max-width: 720px){
