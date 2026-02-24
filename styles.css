@@ -119,7 +119,7 @@ body{
 .nav-mobile.is-open{ display: block; }
 
 /* Mobile only */
-@media (max-width: 720px){
+@media (max-width: 900px){
   .nav-desktop{ display: none; }
   .nav-toggle{ display: flex; }
 
