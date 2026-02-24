@@ -1042,29 +1042,3 @@ a:hover {
 .nav-toggle:hover{
   background: rgba(255,255,255,0.15);
 }
-/* Reveal animation */
-.reveal{
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  will-change: opacity, transform;
-}
-
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Petite variante plus “douce” (optionnel) */
-.reveal--slow{
-  transition-duration: 850ms;
-}
-
-/* Respect des préférences d’accessibilité */
-@media (prefers-reduced-motion: reduce){
-  .reveal, .reveal.is-visible{
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-}
