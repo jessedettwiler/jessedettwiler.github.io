@@ -1051,3 +1051,14 @@ body{
 body.is-loaded{
   opacity: 1;
 }
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* important */
+  gap: 12px;
+}
+
+.nav-desktop{
+  display: flex;
+  margin-left: auto; /* ça pousse le menu tout à droite */
+}
