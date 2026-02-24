@@ -136,3 +136,6 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   // init
   measure();
 });
+window.addEventListener('load', () => {
+  document.body.classList.add('is-loaded');
+});
