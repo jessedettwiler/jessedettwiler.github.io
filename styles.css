@@ -1062,3 +1062,7 @@ body.is-loaded{
   display: flex;
   margin-left: auto; /* ça pousse le menu tout à droite */
 }
+@media (max-width: 900px){
+  .nav-desktop{ display: none !important; }
+  .nav-toggle{ display: flex !important; }
+}
