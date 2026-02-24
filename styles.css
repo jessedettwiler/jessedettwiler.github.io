@@ -1066,3 +1066,16 @@ body.is-loaded{
   .nav-desktop{ display: none !important; }
   .nav-toggle{ display: flex !important; }
 }
+.site-header{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 🔥 clé */
+}
+.nav-toggle{
+  margin-left: auto;   /* 🔥 pousse à droite */
+}
