@@ -1088,3 +1088,14 @@ body.is-loaded{
   border-top: 1px solid rgba(255,255,255,.12);
 }
 .site-footer-min p{ margin: 0; }
+
+/* Smooth slide movement */
+.ms-track{
+  transition: transform 650ms ease;
+  will-change: transform;
+}
+
+/* Respect accessibility setting */
+@media (prefers-reduced-motion: reduce){
+  .ms-track{ transition: none; }
+}
