@@ -139,3 +139,66 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
 window.addEventListener('load', () => {
   document.body.classList.add('is-loaded');
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector("[data-slider]");
+  if (!slider) return;
+
+  const track = slider.querySelector(".ms-track");
+  const slides = Array.from(slider.querySelectorAll(".ms-slide"));
+  const prevBtn = slider.querySelector(".ms-prev");
+  const nextBtn = slider.querySelector(".ms-next");
+  const dots = Array.from(slider.querySelectorAll(".ms-dots .ms-dot"));
+
+  if (!track || slides.length === 0) return;
+
+  let index = 0;
+  let timer = null;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setActiveClasses() {
+    slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+  }
+
+  function goTo(i) {
+    index = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(${-index * 100}%)`;
+    setActiveClasses();
+  }
+
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  // Hook buttons (keep your UI working)
+  if (nextBtn) nextBtn.addEventListener("click", (e) => { e.preventDefault(); stop(); next(); start(); });
+  if (prevBtn) prevBtn.addEventListener("click", (e) => { e.preventDefault(); stop(); prev(); start(); });
+
+  // Hook dots (if present)
+  if (dots.length) {
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => { stop(); goTo(i); start(); });
+    });
+  }
+
+  function start() {
+    if (prefersReduced) return;
+    stop();
+    timer = setInterval(next, 5000); // 5s par slide (change si tu veux)
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  // Pause on hover / touch (pro)
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  slider.addEventListener("touchstart", stop, { passive: true });
+  slider.addEventListener("touchend", start);
+
+  // Init
+  goTo(0);
+  start();
+});
