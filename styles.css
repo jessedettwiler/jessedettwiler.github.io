@@ -1079,3 +1079,12 @@ body.is-loaded{
 .nav-toggle{
   margin-left: auto;   /* 🔥 pousse à droite */
 }
+.site-footer-min{
+  padding: 18px 16px;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,.70);
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.site-footer-min p{ margin: 0; }
