@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  <footer class="site-footer-min">
+  <p>© <span id="year"></span> C4C Music. All rights reserved. · Based in Switzerland</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
