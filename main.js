@@ -79,7 +79,7 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   }
 
   function render(skipAnim = false) {
-    track.style.transition = skipAnim ? "none" : "transform .35s ease";
+    track.style.transition = skipAnim ? "none" : "transform .7s ease";
     track.style.transform = `translate3d(${-index * slideW}px, 0, 0)`;
 
     slides.forEach((s, i) => {
