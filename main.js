@@ -24,6 +24,8 @@
     if (e.key === 'Escape') closeMenu();
   });
 })();
+
+
 // =========================
 // Milestone slider (PIXEL-PERFECT, RESPONSIVE)
 // =========================
@@ -77,23 +79,24 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   }
 
   function render(skipAnim = false) {
-  track.style.transition = skipAnim ? "none" : "transform .35s ease";
-  track.style.transform = `translate3d(${-index * slideW}px, 0, 0)`;
+    track.style.transition = skipAnim ? "none" : "transform .35s ease";
+    track.style.transform = `translate3d(${-index * slideW}px, 0, 0)`;
 
-  slides.forEach((s, i) => {
-    s.classList.toggle("is-active", i === index);
-  });
-
-  dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
-  if (prevBtn) prevBtn.disabled = index === 0;
-  if (nextBtn) nextBtn.disabled = index === slides.length - 1;
-
-  if (skipAnim) {
-    requestAnimationFrame(() => {
-      track.style.transition = "transform .35s ease";
+    slides.forEach((s, i) => {
+      s.classList.toggle("is-active", i === index);
     });
+
+    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    if (prevBtn) prevBtn.disabled = index === 0;
+    if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+
+    if (skipAnim) {
+      requestAnimationFrame(() => {
+        track.style.transition = "transform .35s ease";
+      });
+    }
   }
-}
+
   function goTo(i) {
     index = clamp(i);
     render(false);
@@ -133,72 +136,43 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   const ro = new ResizeObserver(measure);
   ro.observe(viewport);
 
-  // init
-  measure();
-});
-window.addEventListener('load', () => {
-  document.body.classList.add('is-loaded');
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector("[data-slider]");
-  if (!slider) return;
-
-  const track = slider.querySelector(".ms-track");
-  const slides = Array.from(slider.querySelectorAll(".ms-slide"));
-  const prevBtn = slider.querySelector(".ms-prev");
-  const nextBtn = slider.querySelector(".ms-next");
-  const dots = Array.from(slider.querySelectorAll(".ms-dots .ms-dot"));
-
-  if (!track || slides.length === 0) return;
-
-  let index = 0;
+  // -------------------------
+  // AUTOPLAY (soft + safe)
+  // -------------------------
   let timer = null;
-
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function setActiveClasses() {
-    slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
-  }
-
-  function goTo(i) {
-    index = (i + slides.length) % slides.length;
-    track.style.transform = `translateX(${-index * 100}%)`;
-    setActiveClasses();
-  }
-
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
-
-  // Hook buttons (keep your UI working)
-  if (nextBtn) nextBtn.addEventListener("click", (e) => { e.preventDefault(); stop(); next(); start(); });
-  if (prevBtn) prevBtn.addEventListener("click", (e) => { e.preventDefault(); stop(); prev(); start(); });
-
-  // Hook dots (if present)
-  if (dots.length) {
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => { stop(); goTo(i); start(); });
-    });
-  }
-
-  function start() {
+  function startAutoplay() {
     if (prefersReduced) return;
-    stop();
-    timer = setInterval(next, 5000); // 5s par slide (change si tu veux)
+    stopAutoplay();
+    timer = setInterval(() => {
+      // si on est à la fin, on repart au début (boucle)
+      const nextIndex = (index >= slides.length - 1) ? 0 : index + 1;
+      goTo(nextIndex);
+    }, 5000); // 5s
   }
 
-  function stop() {
+  function stopAutoplay() {
     if (timer) clearInterval(timer);
     timer = null;
   }
 
-  // Pause on hover / touch (pro)
-  slider.addEventListener("mouseenter", stop);
-  slider.addEventListener("mouseleave", start);
-  slider.addEventListener("touchstart", stop, { passive: true });
-  slider.addEventListener("touchend", start);
+  // Pause sur interaction (pro)
+  slider.addEventListener("mouseenter", stopAutoplay);
+  slider.addEventListener("mouseleave", startAutoplay);
+  slider.addEventListener("touchstart", stopAutoplay, { passive: true });
+  slider.addEventListener("touchend", startAutoplay);
 
-  // Init
-  goTo(0);
-  start();
+  // Reset timer après interaction utilisateur
+  prevBtn?.addEventListener("click", () => { stopAutoplay(); startAutoplay(); });
+  nextBtn?.addEventListener("click", () => { stopAutoplay(); startAutoplay(); });
+
+  // init
+  measure();
+  startAutoplay();
+});
+
+
+window.addEventListener('load', () => {
+  document.body.classList.add('is-loaded');
 });
