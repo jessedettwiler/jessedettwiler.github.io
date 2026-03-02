@@ -1170,3 +1170,11 @@ body.is-loaded{
   transform: translateY(0);
   padding-bottom: 12px;     /* ouvert = ton padding original */
 }
+/* FAQ: lighter look */
+.faq-item{
+  margin-top: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);  /* léger voile clair */
+  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+}
