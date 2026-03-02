@@ -1126,3 +1126,29 @@ body.is-loaded{
     transition: none;
   }
 }
+/* FAQ: smooth open/close (override padding so the animation is visible) */
+.faq-item .faq-answer{
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+
+  padding: 0 6px;              /* no bottom padding when closed */
+  transition:
+    max-height 520ms ease,
+    opacity 260ms ease,
+    transform 260ms ease,
+    padding-bottom 520ms ease; /* animate the “breathing space” */
+}
+
+.faq-item[open] .faq-answer{
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+
+  padding-bottom: 12px;        /* restore your original bottom padding */
+}
+
+@media (prefers-reduced-motion: reduce){
+  .faq-item .faq-answer{ transition: none; }
+}
