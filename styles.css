@@ -1152,3 +1152,21 @@ body.is-loaded{
 @media (prefers-reduced-motion: reduce){
   .faq-item .faq-answer{ transition: none; }
 }
+/* FAQ smooth (requires JS below) */
+.faq-item .faq-answer{
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  padding: 0 6px;           /* fermé = pas d’espace en bas */
+}
+
+.faq-item .faq-answer.is-animating{
+  transition: height 520ms ease, opacity 260ms ease, transform 260ms ease, padding-bottom 520ms ease;
+}
+
+.faq-item[open] .faq-answer{
+  opacity: 1;
+  transform: translateY(0);
+  padding-bottom: 12px;     /* ouvert = ton padding original */
+}
