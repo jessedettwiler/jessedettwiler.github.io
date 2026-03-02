@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
   
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -107,7 +104,7 @@
 
           <div class="readmore-content">
             <p>
-              I was born on December 13th, 1997 in France. At 18, I moved to the French-speaking part of Switzerland
+              I was born on December 13th, 1997. When I turned 18, I moved to the French-speaking part of Switzerland
               for my military service, a long chapter that shaped me in ways I didn’t expect. I then studied Sound Design in Lausanne
               part-time for two years while working restaurant jobs, and for a while I also played music in the street to get by.
               I’m based in Switzerland today, and in 2024 I married the most wonderful woman.
@@ -115,7 +112,7 @@
 
             <p>
               Music found me rather early. I started with classical training at six, I learned theory with my brothers and went through ten years of music school,
-              with the transversal flute as my first instrument (our parents forced us, with love of course). For most of my youth, I hated music...until my teenage years, when I discovered a YouTube video of
+              with the transverse flute as my first instrument (our parents forced us, with love of course). For most of my youth, I hated music...until my teenage years, when I discovered a YouTube video of
               Bob Dylan at the 1964 Newport Festival. Something clicked. It felt like reconciliation. I taught myself folk guitar and harmonica, became the drummer in a rock band,
               sold hip-hop instrumentals, and released EDM / future bass projects online. The more I explored, the more music became a passion.
             </p>
@@ -134,7 +131,7 @@
             </p>
 
             <p>
-              In spring 2025, I founded Folk-Hop Radio: a playlist network built to support new Folk-Hop artists and give the sub-genre the visibility it still rarely gets.
+              In spring 2025, I founded Folk-Hop Radio: a playlist network built to support fellow Folk-Hop artists and give the sub-genre the visibility it still rarely gets.
             </p>
 
             <p>
@@ -276,7 +273,7 @@
 
           <!-- SLIDE 1 -->
           <figure class="ms-slide">
-            <img src="/images/milestones/300.jpg" alt="C4C reached 300 millions streams globally" loading="lazy">
+            <img src="/images/milestones/300.jpg" alt="C4C reached 300 million streams globally" loading="lazy">
             <figcaption>
               <strong>300M+ Streams Worldwide</strong><br>
               Reaching 300 million streams across platforms felt unreal, a huge milestone made possible by you and every faithful listener around the globe. Thank you!! :)
@@ -288,7 +285,7 @@
             <img src="/images/milestones/folkhopvol1.jpg" alt="Folk-Hop, Vol. 1 milestone" loading="lazy">
             <figcaption>
               <strong>The First Folk-Hop Album · released June 10, 2020</strong><br>
-              Folk-Hop Vol. 1 is my independent debut from the trilogy that tried to define the Folk-Hop genre by blending acoustic indie folk instrumentation with lo-fi hip-hop beats. Self-produced and released on vinyl as well, it established the foundation of C4C and the Folk-Hop sound that I love so much.
+              Folk-Hop Vol. 1 is my first independent release in the trilogy that tried to define the Folk-Hop genre by blending acoustic indie folk instrumentation with lo-fi hip-hop beats. Self-produced and released on vinyl as well, it established the foundation of C4C and the Folk-Hop sound.
             </figcaption>
           </figure>
 
@@ -306,7 +303,7 @@
             <img src="/images/milestones/folkhopradio.jpg" alt="Folk-Hop Radio founded milestone" loading="lazy">
             <figcaption>
               <strong>The Launch of Folk-Hop Radio · May 11, 2025</strong><br>
-              A curated network of playlists and channels across major DSPs, designed to grow the Folk-Hop genre, support fellow independent folk-hopper, and connect organic lofi music with a global audience.
+              A curated network of playlists and channels across major DSPs, designed to grow the Folk-Hop genre, support fellow independent folk-hopper, and connect organic lo-fi music with a global audience.
             </figcaption>
           </figure>
 
@@ -352,9 +349,7 @@
       <summary>What is Folk-Hop music?</summary>
       <div class="faq-answer">
         <p>
-          Folk-Hop is a genre blending acoustic indie folk instrumentation with lo-fi hip-hop beats,
-          founded by C4C in Switzerland. It blends acoustic indie folk instrumentation (guitar, ukulele,
-          harmonica, kalimba, flute) with lo-fi hip-hop drum patterns and boom-bap rhythms.
+          Folk-Hop is a sub-genre created by C4C that blends acoustic indie folk instruments (guitar, ukulele, harmonica, kalimba, flute) with lo-fi hip-hop drums and boom-bap grooves. It emphasizes organic textures, human imperfections, and warm acoustic recordings. It's a human-made alternative to AI-generated background music.
         </p>
         <p>
           Unlike traditional lo-fi beats, Folk-Hop emphasizes organic textures, human imperfections,
@@ -387,5 +382,10 @@
 </footer>
 
   <script src="/main.js" defer></script>
+  <script>
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
