@@ -1099,3 +1099,33 @@ body.is-loaded{
 @media (prefers-reduced-motion: reduce){
   .ms-track{ transition: none; }
 }
+/* FAQ: smooth open/close (no JS) */
+.faq-item .faq-answer{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms ease, opacity 280ms ease, transform 280ms ease;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.faq-item[open] .faq-answer{
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensures content is clipped while animating */
+.faq-item .faq-answer > *{
+  overflow: hidden;
+}
+
+/* Optional: better affordance */
+.faq-item summary{
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .faq-item .faq-answer{
+    transition: none;
+  }
+}
