@@ -1099,31 +1099,28 @@ body.is-loaded{
 @media (prefers-reduced-motion: reduce){
   .ms-track{ transition: none; }
 }
-/* FAQ: smooth open/close (no JS) */
+/* FAQ: smooth open/close (visible + reliable) */
 .faq-item .faq-answer{
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 280ms ease, opacity 280ms ease, transform 280ms ease;
+  overflow: hidden;
+  max-height: 0;
   opacity: 0;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  transition: max-height 420ms ease, opacity 260ms ease, transform 260ms ease;
 }
 
+/* When open */
 .faq-item[open] .faq-answer{
-  grid-template-rows: 1fr;
+  max-height: 1000px; /* large enough for your longest answer */
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Ensures content is clipped while animating */
-.faq-item .faq-answer > *{
-  overflow: hidden;
-}
-
-/* Optional: better affordance */
+/* Optional: better click affordance */
 .faq-item summary{
   cursor: pointer;
 }
 
+/* Respect reduced-motion */
 @media (prefers-reduced-motion: reduce){
   .faq-item .faq-answer{
     transition: none;
