@@ -176,3 +176,50 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
 window.addEventListener('load', () => {
   document.body.classList.add('is-loaded');
 });
+// Smooth FAQ <details> animation
+document.querySelectorAll(".faq-item").forEach((details) => {
+  const summary = details.querySelector("summary");
+  const content = details.querySelector(".faq-answer");
+  if (!summary || !content) return;
+
+  summary.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const isOpen = details.hasAttribute("open");
+
+    content.classList.add("is-animating");
+
+    if (!isOpen) {
+      // OPEN
+      details.setAttribute("open", "");
+      content.style.height = "0px";              // start closed
+      requestAnimationFrame(() => {
+        const h = content.scrollHeight;
+        content.style.height = h + "px";         // animate to full height
+      });
+
+      const onEnd = (ev) => {
+        if (ev.propertyName !== "height") return;
+        content.style.height = "auto";           // let it grow naturally after
+        content.classList.remove("is-animating");
+        content.removeEventListener("transitionend", onEnd);
+      };
+      content.addEventListener("transitionend", onEnd);
+
+    } else {
+      // CLOSE
+      content.style.height = content.scrollHeight + "px";  // set current height
+      requestAnimationFrame(() => {
+        content.style.height = "0px";                      // animate to 0
+      });
+
+      const onEnd = (ev) => {
+        if (ev.propertyName !== "height") return;
+        details.removeAttribute("open");
+        content.classList.remove("is-animating");
+        content.removeEventListener("transitionend", onEnd);
+      };
+      content.addEventListener("transitionend", onEnd);
+    }
+  });
+});
