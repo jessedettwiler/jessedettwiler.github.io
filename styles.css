@@ -1053,7 +1053,7 @@ main{
 body.is-loaded main{
   opacity: 1;
 }
-}
+
 body.is-loaded{
   opacity: 1;
 }
@@ -1202,7 +1202,7 @@ body.is-loaded{
   }
 }
 .meta-note{
-  font-size: 1.2 em;   /* plus petit */
+  font-size: 1.2em;   /* plus petit */
   font-style: italic; /* italique */
   opacity: 0.9;       /* optionnel: un peu plus doux */
 }
