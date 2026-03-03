@@ -1196,7 +1196,7 @@ body.is-loaded{
   }
 }
 .meta-note{
-  font-size: 0.9em;   /* plus petit */
+  font-size: 1.2 em;   /* plus petit */
   font-style: italic; /* italique */
   opacity: 0.9;       /* optionnel: un peu plus doux */
 }
