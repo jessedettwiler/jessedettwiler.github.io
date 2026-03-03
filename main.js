@@ -231,3 +231,12 @@ document.querySelectorAll(".faq-item").forEach((details) => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const el = document.querySelector(hash);
+  if (el && el.tagName.toLowerCase() === "details") {
+    el.open = true;
+  }
+});
