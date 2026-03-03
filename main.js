@@ -132,9 +132,13 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
     }
   }, { passive: true });
 
-  // Auto-resize
-const ro = new ResizeObserver(measure);
-ro.observe(viewport);
+// Auto-resize (safe)
+if (typeof ResizeObserver !== "undefined") {
+  const ro = new ResizeObserver(measure);
+  ro.observe(viewport);
+} else {
+  window.addEventListener("resize", measure);
+}
 
   // -------------------------
   // AUTOPLAY (soft + safe)
