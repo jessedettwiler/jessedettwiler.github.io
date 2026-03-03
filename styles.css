@@ -1313,3 +1313,11 @@ body.is-loaded{
   color: rgba(255,255,255,.92) !important;
   box-shadow: 0 10px 22px rgba(0,0,0,.18) !important;
 }
+/* Mobile Safari/Brave: avoid black “glass” bug on blurred pills */
+@media (max-width: 900px){
+  .dsp{
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: rgba(255,255,255,.12) !important; /* slightly stronger */
+  }
+}
