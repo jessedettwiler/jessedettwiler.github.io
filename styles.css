@@ -1210,3 +1210,28 @@ body.is-loaded{
   line-height: 1;          /* optionnel, rend la flèche plus "net" */
   margin-top: 0.1em;       /* optionnel: micro-ajustement */
 }
+.bandcamp-card .meta-pill{
+  display: inline-flex;
+  align-items: center;            /* ici center OK car on va empêcher le wrap */
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  margin-top: 10px;
+}
+
+.bandcamp-card .meta-pill .meta-note{
+  font-size: 0.9em;
+  font-style: normal;            /* plus pro que l’italique ici */
+  opacity: 0.95;
+}
+
+.bandcamp-card .meta-pill .meta-arrow{
+  opacity: 0.85;
+}
+
+/* Empêche le “limited- / edition” coupé en 2 lignes dans la pilule */
+.bandcamp-card .meta-pill{
+  white-space: nowrap;
+}
