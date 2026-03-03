@@ -133,12 +133,8 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   }, { passive: true });
 
   // Auto-resize
-if (typeof ResizeObserver !== "undefined") {
-  const ro = new ResizeObserver(measure);
-  ro.observe(viewport);
-} else {
-  window.addEventListener("resize", measure);
-}
+const ro = new ResizeObserver(measure);
+ro.observe(viewport);
 
   // -------------------------
   // AUTOPLAY (soft + safe)
