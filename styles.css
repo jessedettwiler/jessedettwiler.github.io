@@ -1195,3 +1195,8 @@ body.is-loaded{
     margin-top: 6px;     /* petit espace */
   }
 }
+.meta-note{
+  font-size: 0.9em;   /* plus petit */
+  font-style: italic; /* italique */
+  opacity: 0.9;       /* optionnel: un peu plus doux */
+}
