@@ -1189,3 +1189,9 @@ body.is-loaded{
   align-items: center;
   gap: 8px;
 }
+@media (max-width: 520px){
+  .note{
+    display: block;      /* passe à la ligne */
+    margin-top: 6px;     /* petit espace */
+  }
+}
