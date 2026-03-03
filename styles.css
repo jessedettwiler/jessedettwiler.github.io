@@ -1302,3 +1302,11 @@ body.is-loaded{
   border-top: 1px solid rgba(255,255,255,.10);
   padding-top: 14px;
 }
+/* Force buttons look on /music/ even if dark mode is forced */
+.music .pill-btn,
+.music a.btn,
+.music-links a{
+  background: rgba(255,255,255,.10) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  color: rgba(255,255,255,.92) !important;
+}
