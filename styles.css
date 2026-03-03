@@ -1306,10 +1306,8 @@ body.is-loaded{
    FORCE /music buttons style (mobile too)
 ========================= */
 
-/* adapte le sélecteur au conteneur réel si besoin */
-.music-links a,
-.music-card a,
-.section.music a{
+/* Force DSP buttons to keep the “glass/green” look on mobile too */
+.dsp{
   background: rgba(255,255,255,.10) !important;
   border: 1px solid rgba(255,255,255,.16) !important;
   color: rgba(255,255,255,.92) !important;
