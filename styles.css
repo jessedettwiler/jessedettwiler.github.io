@@ -1302,11 +1302,16 @@ body.is-loaded{
   border-top: 1px solid rgba(255,255,255,.10);
   padding-top: 14px;
 }
-/* Force buttons look on /music/ even if dark mode is forced */
-.music .pill-btn,
-.music a.btn,
-.music-links a{
+/* =========================
+   FORCE /music buttons style (mobile too)
+========================= */
+
+/* adapte le sélecteur au conteneur réel si besoin */
+.music-links a,
+.music-card a,
+.section.music a{
   background: rgba(255,255,255,.10) !important;
-  border: 1px solid rgba(255,255,255,.18) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
   color: rgba(255,255,255,.92) !important;
+  box-shadow: 0 10px 22px rgba(0,0,0,.18) !important;
 }
