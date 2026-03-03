@@ -1216,3 +1216,89 @@ body.is-loaded{
   line-height: 1;          /* optionnel, rend la flèche plus "net" */
   margin-top: 0.1em;       /* optionnel: micro-ajustement */
 }
+
+/* =========================
+   FAQ – Premium look
+========================= */
+
+.faq{
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq h2{
+  margin: 0 0 14px;
+  letter-spacing: .2px;
+}
+
+.faq-item{
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.10);
+  box-shadow: 0 10px 28px rgba(0,0,0,.18);
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+/* Summary row */
+.faq-item > summary{
+  list-style: none;
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 650;
+  letter-spacing: .15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  user-select: none;
+
+  transition: background .25s ease, transform .25s ease;
+}
+
+/* Remove default marker */
+.faq-item > summary::-webkit-details-marker{ display:none; }
+
+/* Hover + focus */
+.faq-item > summary:hover{
+  background: rgba(255,255,255,.06);
+}
+.faq-item > summary:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.18) inset;
+}
+
+/* Chevron (use your existing arrow icon if you have one) */
+.faq-item > summary::after{
+  content: "▾";
+  font-size: 14px;
+  opacity: .9;
+  transform: rotate(0deg);
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* Open state */
+.faq-item[open] > summary{
+  background: rgba(255,255,255,.08);
+}
+.faq-item[open] > summary::after{
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* Answer */
+.faq-answer{
+  padding: 0 18px 16px;
+  color: rgba(255,255,255,.88);
+}
+.faq-answer p{
+  margin: 10px 0 0;
+  line-height: 1.65;
+  font-weight: 420;
+}
+
+/* Optional: subtle divider line between summary & answer when open */
+.faq-item[open] .faq-answer{
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 14px;
+}
