@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+  document.body.classList.add('is-loaded');
+});
+
 (function () {
   const btn = document.querySelector('.nav-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -176,10 +180,6 @@ if (typeof ResizeObserver !== "undefined") {
   startAutoplay();
 });
 
-
-window.addEventListener('load', () => {
-  document.body.classList.add('is-loaded');
-});
 // Smooth FAQ <details> animation
 document.querySelectorAll(".faq-item").forEach((details) => {
   const summary = details.querySelector("summary");
