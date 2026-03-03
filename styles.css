@@ -1200,3 +1200,13 @@ body.is-loaded{
   font-style: italic; /* italique */
   opacity: 0.9;       /* optionnel: un peu plus doux */
 }
+.meta-line{
+  display: inline-flex;
+  align-items: flex-start; /* au lieu de center */
+  gap: 8px;
+}
+
+.meta-arrow{
+  line-height: 1;          /* optionnel, rend la flèche plus "net" */
+  margin-top: 0.1em;       /* optionnel: micro-ajustement */
+}
