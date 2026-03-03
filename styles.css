@@ -1184,3 +1184,8 @@ body.is-loaded{
   vertical-align: baseline; /* ou middle */
   white-space: nowrap;
 }
+.meta-line{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
