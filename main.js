@@ -240,3 +240,22 @@ document.addEventListener("DOMContentLoaded", () => {
     el.open = true;
   }
 });
+function openFaqFromHash() {
+  const id = window.location.hash;
+  if (!id) return;
+
+  const details = document.querySelector(id);
+  if (!details || details.tagName.toLowerCase() !== "details") return;
+
+  const summary = details.querySelector("summary");
+  if (!summary) return;
+
+  // Si déjà ouvert, on ne retoggle pas. On force juste l'affichage via le même chemin que le clic.
+  if (!details.open) summary.click();
+
+  // Petit scroll propre après ouverture (optionnel)
+  setTimeout(() => details.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+}
+
+document.addEventListener("DOMContentLoaded", openFaqFromHash);
+window.addEventListener("hashchange", openFaqFromHash);
