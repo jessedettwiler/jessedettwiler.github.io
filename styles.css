@@ -1178,3 +1178,9 @@ body.is-loaded{
   background: rgba(255,255,255,.04);  /* léger voile clair */
   box-shadow: 0 8px 22px rgba(0,0,0,.12);
 }
+.meta-arrow{
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: baseline; /* ou middle */
+  white-space: nowrap;
+}
