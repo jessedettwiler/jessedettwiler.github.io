@@ -8,15 +8,17 @@ window.addEventListener('load', () => {
   if (!btn || !menu) return;
 
   function closeMenu() {
-    menu.classList.remove('is-open');
-    btn.setAttribute('aria-expanded', 'false');
-  }
+  menu.classList.remove('is-open');
+  btn.classList.remove('is-open');
+  btn.setAttribute('aria-expanded', 'false');
+}
 
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = menu.classList.toggle('is-open');
-    btn.setAttribute('aria-expanded', String(isOpen));
-  });
+btn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const isOpen = menu.classList.toggle('is-open');
+  btn.classList.toggle('is-open', isOpen);
+  btn.setAttribute('aria-expanded', String(isOpen));
+});
 
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
