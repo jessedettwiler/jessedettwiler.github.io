@@ -1259,7 +1259,7 @@ body.is-loaded{
   }
 }
 .meta-note{
-  font-size: 1.2em;   /* plus petit */
+  font-size: 0.95em;   /* plus petit */
   font-style: italic; /* italique */
   opacity: 0.9;       /* optionnel: un peu plus doux */
 }
@@ -1485,10 +1485,10 @@ body.is-loaded{
 }
 
 .bandcamp-pill img{
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: block;
-  flex: 0 0 22px;
+  flex: 0 0 24px;
   filter: brightness(0) invert(1);
   opacity: 0.92;
 }
