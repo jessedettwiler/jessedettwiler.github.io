@@ -1477,3 +1477,17 @@ body.is-loaded{
     grid-template-columns: 1fr;
   }
 }
+.bandcamp-pill{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.bandcamp-pill img{
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex: 0 0 16px;
+  opacity: 0.92;
+}
