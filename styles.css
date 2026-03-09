@@ -879,42 +879,6 @@ a:hover {
   margin-bottom: 4px;
 }
 
-/* arrows overlay */
-.ms-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
-
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease;
-}
-
-.ms-nav:hover{
-  background: rgba(255,255,255,0.18);
-  transform: translateY(-50%) scale(1.05);
-}
-
-.ms-prev{ left: 12px; }
-.ms-next{ right: 12px; }
-
-.ms-icon{
-  font-size: 20px;
-  line-height: 1;
-  transform: translateY(-1px);
-}
-
 /* dots */
 .ms-dots{
   display: flex;
@@ -929,16 +893,7 @@ a:hover {
 .ms-track{ display: flex; flex-wrap: nowrap; gap: 0; will-change: transform; }
 .ms-slide{ flex: 0 0 100%; min-width: 100%; margin: 0; box-sizing: border-box; }
 
-/* arrows overlay (tes classes HTML sont ms-prev/ms-next) */
-.ms-nav{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 44px; height: 44px;
-  border-radius: 999px;
-  display:flex; align-items:center; justify-content:center;
-}
+
 .ms-prev{ left: 12px; }
 .ms-next{ right: 12px; }
 .ms-viewport{ overflow: hidden; }
@@ -999,18 +954,6 @@ a:hover {
 .ms-viewport{ position: relative; }
 
 @media (max-width: 600px){
-  .ms-nav{
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-  .ms-prev{ left: 12px !important; }
-  .ms-next{ right: 12px !important; }
-
-  /* option: smaller on mobile */
-  .ms-nav{
-    width: 40px !important;
-    height: 40px !important;
-  }
 }
 
 /* =========================
@@ -1491,4 +1434,73 @@ body.is-loaded{
   flex: 0 0 24px;
   filter: brightness(0) invert(1);
   opacity: 0.92;
+}
+.ms-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.14);
+  cursor: pointer;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.ms-nav:hover{
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.ms-nav:active{
+  transform: translateY(-50%) scale(0.97);
+}
+
+.ms-nav:focus,
+.ms-nav:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.12), 0 8px 20px rgba(0,0,0,0.14);
+}
+
+.ms-prev{ left: 12px; }
+.ms-next{ right: 12px; }
+
+.ms-icon{
+  color: inherit;
+  font-size: 22px;
+  line-height: 1;
+  display: block;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px){
+  .ms-nav{
+    width: 42px;
+    height: 42px;
+  }
+
+  .ms-prev{ left: 10px; }
+  .ms-next{ right: 10px; }
+
+  .ms-icon{
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px){
+  .ms-nav{
+    display: none;
+  }
 }
