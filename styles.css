@@ -1409,3 +1409,27 @@ body.is-loaded{
     grid-template-columns: 1fr;
   }
 }
+/* Stream Everywhere — logo buttons polish */
+.dsp-logo{
+  justify-content: flex-start;
+  padding: 14px 16px;
+}
+
+.dsp-logo img{
+  width: 17px;
+  height: 17px;
+  opacity: 0.92;
+  flex: 0 0 17px;
+  filter: brightness(0) invert(1);
+}
+
+.dsp-logo span{
+  line-height: 1.2;
+}
+
+/* Optional: keep 2 columns a bit longer on tablet */
+@media (max-width: 640px){
+  .dsp-grid--logos{
+    grid-template-columns: 1fr;
+  }
+}
