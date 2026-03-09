@@ -1378,3 +1378,34 @@ body.is-loaded{
     background: rgba(255,255,255,.12) !important; /* un poil plus opaque */
   }
 }
+.dsp-grid--logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.dsp-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.dsp-logo img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex: 0 0 18px;
+  opacity: 0.95;
+}
+
+.dsp-logo span {
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .dsp-grid--logos {
+    grid-template-columns: 1fr;
+  }
+}
