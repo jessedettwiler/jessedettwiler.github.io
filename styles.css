@@ -1023,7 +1023,7 @@ a:hover {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 
