@@ -1014,35 +1014,45 @@ a:hover {
 .nav-toggle{
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.14);
-  backdrop-filter: blur(10px);
-
+  margin-left: auto;
   padding: 0;
-  cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav-toggle-bar{
-  width: 22px;
-  height: 2.5px;
-  background: rgba(255,255,255,.92);
-  border-radius: 999px;
-  margin: 4px 0;
-}
-.nav-toggle{
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
   background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
 }
 
 .nav-toggle:hover{
   background: rgba(255,255,255,0.15);
+}
+
+.nav-toggle-bar{
+  position: absolute;
+  width: 22px;
+  height: 2.5px;
+  background: rgba(255,255,255,.92);
+  border-radius: 999px;
+  transition: transform .28s ease, opacity .2s ease, top .28s ease;
+}
+
+.nav-toggle-bar:nth-child(1){
+  top: 16px;
+}
+
+.nav-toggle-bar:nth-child(2){
+  top: 22.5px;
+}
+
+.nav-toggle-bar:nth-child(3){
+  top: 29px;
 }
 body{ opacity: 1; }
 
