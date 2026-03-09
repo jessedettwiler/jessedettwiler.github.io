@@ -1054,6 +1054,20 @@ a:hover {
 .nav-toggle-bar:nth-child(3){
   top: 29px;
 }
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1){
+  top: 22.5px;
+  transform: rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2){
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3){
+  top: 22.5px;
+  transform: rotate(-45deg);
+}
+
 body{ opacity: 1; }
 
 main{
