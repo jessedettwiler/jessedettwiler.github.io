@@ -146,8 +146,8 @@ body{
   transform: translateY(0) scale(1);
   pointer-events: auto;
   transition:
-    opacity .24s ease,
-    transform .24s ease,
+    opacity .35s ease,
+    transform .35s ease,
     visibility 0s linear 0s;
 }
 
