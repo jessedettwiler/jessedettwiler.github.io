@@ -1433,3 +1433,9 @@ body.is-loaded{
     grid-template-columns: 1fr;
   }
 }
+.dsp-logo img{
+  width: 17px;
+  height: 17px;
+  filter: brightness(0) invert(1);
+  opacity: 0.92;
+}
