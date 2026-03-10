@@ -2,30 +2,66 @@
 <html lang="en">
 <head>
   
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MusicArtist",
-  "@id": "https://c4cmusic.com/#c4c",
-  "name": "C4C",
-  "alternateName": [
-    "Jesse Dettwiler",
-    "Jessy Dettwiler",
-    "Jesse Aymon Dettwiler",
-    "Jessy Aymon Dettwiler"
-  ],
-  "description": "Swiss composer and producer known for blending acoustic indie folk with lo-fi hip-hop (Folk-Hop). Founder of Folk-Hop Radio.",
-  "genre": ["Folk-Hop", "lo-fi hip hop", "indie folk", "instrumental hip hop"],
-  "birthDate": "1997-12-13",
-  "url": "https://c4cmusic.com/",
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q138581842",
-    "https://musicbrainz.org/artist/c3e06f4c-f0f1-4224-af3c-e7251a50a27d",
-    "https://open.spotify.com/artist/5jZeLexrrwGNUy6nv7tzdr",
-    "https://www.instagram.com/c4c.music/",
-    "https://www.youtube.com/channel/UC-EATYXHa_0nVz31fPlcstw",
-    "https://music.apple.com/us/artist/c4c/539829651",
-    "https://c4cproduction.bandcamp.com/"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://c4cmusic.com/#c4c",
+      "name": "C4C",
+      "alternateName": [
+        "Jesse Dettwiler",
+        "Jessy Dettwiler",
+        "Jesse Aymon Dettwiler",
+        "Jessy Aymon Dettwiler"
+      ],
+      "description": "C4C is the artist name of Swiss composer and producer Jesse Dettwiler, known for blending acoustic indie folk and lo-fi hip-hop in a style he calls Folk-Hop. Founder of Folk-Hop Radio.",
+      "jobTitle": [
+        "Composer",
+        "Music Producer"
+      ],
+      "genre": [
+        "Folk-Hop",
+        "lo-fi hip hop",
+        "indie folk",
+        "instrumental hip hop"
+      ],
+      "url": "https://c4cmusic.com/",
+      "image": "https://c4cmusic.com/images/bio.jpg",
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q138581842",
+        "https://musicbrainz.org/artist/c3e06f4c-f0f1-4224-af3c-e7251a50a27d",
+        "https://open.spotify.com/artist/5jZeLexrrwGNUy6nv7tzdr",
+        "https://www.instagram.com/c4c.music/",
+        "https://www.youtube.com/channel/UC-EATYXHa_0nVz31fPlcstw",
+        "https://music.apple.com/us/artist/c4c/539829651",
+        "https://c4cproduction.bandcamp.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://c4cmusic.com/#website",
+      "url": "https://c4cmusic.com/",
+      "name": "C4C Music",
+      "publisher": {
+        "@id": "https://c4cmusic.com/#c4c"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://c4cmusic.com/contact/#webpage",
+      "url": "https://c4cmusic.com/contact/",
+      "name": "Contact | C4C",
+      "isPartOf": {
+        "@id": "https://c4cmusic.com/#website"
+      },
+      "about": {
+        "@id": "https://c4cmusic.com/#c4c"
+      },
+      "inLanguage": "en"
+    }
   ]
 }
 </script>
