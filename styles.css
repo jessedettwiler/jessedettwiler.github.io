@@ -1506,10 +1506,9 @@ body.is-loaded{
 }
 .fhr-actions{
   display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin-top: 14px;
 }
