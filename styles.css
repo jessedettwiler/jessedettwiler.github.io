@@ -1091,7 +1091,6 @@ body.is-loaded{
   text-align: center;
   font-size: 13px;
   color: rgba(255,255,255,.70);
-  border-top: 1px solid rgba(255,255,255,.12);
 }
 .site-footer-min p{ margin: 0; }
 
