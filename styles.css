@@ -1686,3 +1686,42 @@ body.is-loaded{
     background:linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.28) 58%, rgba(0,0,0,.08));
   }
 }
+.folkhopper-platforms{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+}
+
+.folkhopper-platforms a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:20px;
+  height:20px;
+  opacity:.92;
+  transition:transform .18s ease, opacity .18s ease;
+}
+
+.folkhopper-platforms a:hover{
+  transform:translateY(-1px);
+  opacity:1;
+}
+
+.folkhopper-platforms img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+@media (max-width: 720px){
+  .folkhopper-platforms{
+    gap:9px;
+  }
+
+  .folkhopper-platforms a{
+    width:18px;
+    height:18px;
+  }
+}
