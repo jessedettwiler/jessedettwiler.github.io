@@ -1935,3 +1935,43 @@ body.is-loaded{
     grid-template-columns: 1fr;
   }
 }
+.listen-card .dsp-grid--logos{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.listen-card .dsp{
+  min-height: 50px;
+  border-radius: 18px;
+}
+
+.listen-card .dsp-logo{
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 12px 14px;
+  min-width: 0;
+}
+
+.listen-card .dsp-logo img{
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.listen-card .dsp-logo span{
+  font-size: 0.98rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px){
+  .listen-card .dsp-grid--logos{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .listen-card .dsp-grid--logos{
+    grid-template-columns: 1fr;
+  }
+}
