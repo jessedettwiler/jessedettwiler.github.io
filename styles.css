@@ -1725,3 +1725,8 @@ body.is-loaded{
     height:18px;
   }
 }
+.bio-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
