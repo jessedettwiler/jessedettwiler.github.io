@@ -1639,3 +1639,23 @@ body.is-loaded{
   gap:10px;
   font-size:1rem;
 }
+.listen-platform{
+  min-height:64px;
+  padding:0 18px;
+  border-radius:16px;
+}
+.listen-card-top{
+  margin-bottom:24px;
+}
+.listen-platforms{
+  gap:12px;
+  margin-top:18px;
+}
+
+.listen-platform{
+  min-height:64px;
+  padding:0 18px;
+  border-radius:16px;
+  font-size:0.98rem;
+  gap:10px;
+}
