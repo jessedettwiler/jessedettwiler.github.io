@@ -1659,3 +1659,40 @@ body.is-loaded{
   font-size:0.98rem;
   gap:10px;
 }
+.listen-badge{
+  flex: 0 0 auto;
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+}
+
+.listen-badge img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+.listen-platforms{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.listen-platform{
+  min-height: 58px;
+  padding: 0 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.98rem;
+}
+
+.listen-platform img,
+.listen-platform svg{
+  width: 20px;
+  height: 20px;
+}
