@@ -2494,3 +2494,6 @@ body.is-loaded{
     justify-self:center;
   }
 }
+.section{
+  padding: 22px 0;
+}
