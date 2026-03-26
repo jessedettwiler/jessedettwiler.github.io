@@ -2217,3 +2217,14 @@ body.is-loaded{
   line-height:1.7;
   opacity:.92;
 }
+.cover-card{
+  transition:
+    transform .24s ease,
+    box-shadow .24s ease,
+    border-color .24s ease;
+}
+
+.cover-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
