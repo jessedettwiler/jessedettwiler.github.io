@@ -2455,3 +2455,6 @@ body.is-loaded{
     border-radius:18px;
   }
 }
+.listen-card .mini-note{
+  margin-top:14px;
+}
