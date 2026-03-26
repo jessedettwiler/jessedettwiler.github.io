@@ -2497,3 +2497,8 @@ body.is-loaded{
 .section{
   padding: 22px 0;
 }
+@media (max-width: 720px){
+  .card{
+    padding: 18px;
+  }
+}
