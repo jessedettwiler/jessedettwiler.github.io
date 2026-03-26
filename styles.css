@@ -2165,3 +2165,15 @@ body.is-loaded{
   border-radius:24px;
   opacity:.94;
 }
+.split-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+@media (max-width: 900px){
+  .split-grid{
+    grid-template-columns:1fr;
+  }
+}
