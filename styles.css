@@ -2159,3 +2159,9 @@ body.is-loaded{
     margin-bottom:18px;
   }
 }
+.listen-badge{
+  width:112px;
+  padding:10px;
+  border-radius:24px;
+  opacity:.94;
+}
