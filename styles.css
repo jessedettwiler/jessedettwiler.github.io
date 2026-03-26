@@ -2458,3 +2458,39 @@ body.is-loaded{
 .listen-card .mini-note{
   margin-top:14px;
 }
+.fhr-wrap{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:24px;
+  align-items:start;
+  margin-top:12px;
+}
+
+.fhr-wrap p{
+  max-width:62ch;
+}
+
+.fhr-photo{
+  margin:0;
+  justify-self:end;
+}
+
+.fhr-photo img{
+  width:100%;
+  max-width:300px;
+  display:block;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  object-fit:cover;
+}
+
+@media (max-width: 720px){
+  .fhr-wrap{
+    grid-template-columns:1fr;
+  }
+
+  .fhr-photo{
+    justify-self:center;
+  }
+}
