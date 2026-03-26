@@ -2134,3 +2134,28 @@ body.is-loaded{
     font-size:.92rem;
   }
 }
+.listen-card{
+  padding:30px;
+}
+
+.listen-top{
+  margin-bottom:30px;
+}
+
+.listen-player{
+  margin-bottom:24px;
+}
+
+@media (max-width: 820px){
+  .listen-card{
+    padding:22px;
+  }
+
+  .listen-top{
+    margin-bottom:22px;
+  }
+
+  .listen-player{
+    margin-bottom:18px;
+  }
+}
