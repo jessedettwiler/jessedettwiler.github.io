@@ -2197,3 +2197,23 @@ body.is-loaded{
     grid-column:auto;
   }
 }
+.covers-intro{
+  margin-top:26px;
+  margin-bottom:18px;
+  max-width:760px;
+}
+
+.covers-kicker{
+  margin:0 0 8px 0;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  opacity:.72;
+}
+
+.covers-note{
+  margin:0;
+  line-height:1.7;
+  opacity:.92;
+}
