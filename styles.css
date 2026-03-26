@@ -2375,3 +2375,83 @@ body.is-loaded{
     grid-template-columns:1fr 1fr;
   }
 }
+
+.listen-card{
+  overflow:hidden;
+}
+
+.listen-top{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 110px;
+  gap:18px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.listen-intro h2{
+  margin-bottom:10px;
+}
+
+.listen-intro p{
+  margin:0;
+  max-width:62ch;
+  opacity:.9;
+}
+
+.listen-eyebrow{
+  margin:0 0 8px 0;
+  font-size:.82rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  opacity:.68;
+}
+
+.listen-badge{
+  margin:0;
+  justify-self:end;
+}
+
+.listen-badge img{
+  width:96px;
+  height:96px;
+  object-fit:cover;
+  display:block;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 10px 24px rgba(0,0,0,.12);
+  background:rgba(255,255,255,.04);
+}
+
+.listen-player{
+  margin-top:6px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+  background:rgba(255,255,255,.03);
+}
+
+.listen-player iframe{
+  display:block;
+}
+
+.dsp-grid--logos{
+  margin-top:18px;
+}
+
+@media (max-width: 720px){
+  .listen-top{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .listen-badge{
+    justify-self:start;
+  }
+
+  .listen-badge img{
+    width:82px;
+    height:82px;
+    border-radius:18px;
+  }
+}
