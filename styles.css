@@ -348,9 +348,9 @@ body{
 }
 
 .page-subtitle{
-  max-width: 10ch;
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  max-width: 560px;
+  line-height: 1.5;
+  letter-spacing: 0;
   margin: 0 0 18px 0;
   opacity: .92;
 }
