@@ -2228,3 +2228,64 @@ body.is-loaded{
   transform:translateY(-3px);
   box-shadow:0 14px 30px rgba(0,0,0,.16);
 }
+.page-subtitle{
+  max-width: 10ch;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.bio-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+  gap:28px;
+  align-items:center;
+}
+
+.bio-text{
+  max-width:640px;
+}
+
+.bio-lede{
+  font-size:1.1rem;
+  line-height:1.75;
+  opacity:.96;
+  margin:0 0 16px 0;
+}
+
+.bio-text p{
+  max-width:62ch;
+}
+
+.bio-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 18px 40px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.bio-actions{
+  margin-top:22px;
+}
+
+@media (max-width: 900px){
+  .bio-hero{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .bio-text{
+    max-width:none;
+  }
+
+  .bio-photo{
+    order:-1;
+  }
+
+  .bio-photo img{
+    border-radius:20px;
+  }
+}
