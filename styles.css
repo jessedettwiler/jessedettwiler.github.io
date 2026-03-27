@@ -1769,3 +1769,15 @@ body.is-loaded{
     line-height: 1.75;
   }
 }
+@media (hover: hover) and (pointer: fine){
+  .quote-card{
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+  }
+
+  .quote-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(0,0,0,.18);
+    border-color: rgba(255,255,255,.18);
+    background: rgba(255,255,255,.055);
+  }
+}
