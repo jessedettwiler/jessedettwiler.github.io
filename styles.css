@@ -1769,14 +1769,3 @@ body.is-loaded{
     line-height: 1.75;
   }
 }
-.quote-card figcaption a{
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.22);
-  transition: border-color .2s ease, opacity .2s ease;
-}
-
-.quote-card figcaption a:hover{
-  border-bottom-color: rgba(255,255,255,.5);
-  opacity: .95;
-}
