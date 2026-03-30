@@ -1919,23 +1919,29 @@ body.is-loaded{
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .release-item{
   position: relative;
   overflow: hidden;
   margin: 0;
-  padding: 16px 18px;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.035);
-  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+  padding: 17px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.11);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.045),
+    rgba(255,255,255,.03)
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 8px 22px rgba(0,0,0,.10);
   transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease,
-    background .22s ease;
+    transform .26s ease,
+    box-shadow .26s ease,
+    border-color .26s ease,
+    background .26s ease;
 }
 
 .release-item::before{
@@ -1945,25 +1951,29 @@ body.is-loaded{
   pointer-events: none;
   background: linear-gradient(
     120deg,
-    rgba(255,255,255,0) 20%,
-    rgba(255,255,255,.07) 50%,
-    rgba(255,255,255,0) 80%
+    rgba(255,255,255,0) 18%,
+    rgba(255,255,255,.05) 50%,
+    rgba(255,255,255,0) 82%
   );
-  transform: translateX(-120%);
-  transition: transform .6s ease;
+  transform: translateX(-130%);
+  transition: transform .75s ease;
 }
 
 .release-item:hover{
-  transform: translateY(-3px);
-  background: rgba(255,255,255,.06);
+  transform: translateY(-2px);
   border-color: rgba(255,255,255,.18);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.04)
+  );
   box-shadow:
-    0 14px 30px rgba(0,0,0,.18),
-    inset 0 1px 0 rgba(255,255,255,.05);
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 14px 30px rgba(0,0,0,.14);
 }
 
 .release-item:hover::before{
-  transform: translateX(120%);
+  transform: translateX(130%);
 }
 
 .release-row{
@@ -1985,7 +1995,7 @@ body.is-loaded{
   line-height: 1.35;
   color: rgba(255,255,255,.96);
   letter-spacing: .01em;
-  transition: color .22s ease;
+  transition: color .22s ease, opacity .22s ease;
 }
 
 .release-item:hover .release-title{
@@ -1997,6 +2007,11 @@ body.is-loaded{
   margin-top: 4px;
   font-size: .94rem;
   color: rgba(255,255,255,.68);
+  transition: color .22s ease;
+}
+
+.release-item:hover .release-meta{
+  color: rgba(255,255,255,.78);
 }
 
 .release-platforms{
@@ -2015,7 +2030,10 @@ body.is-loaded{
   align-items: center;
   justify-content: center;
   opacity: .82;
-  transition: transform .22s ease, opacity .22s ease;
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    filter .22s ease;
 }
 
 .release-platform:hover{
@@ -2024,8 +2042,7 @@ body.is-loaded{
 }
 
 .release-item:hover .release-platform{
-  transform: translateY(-1px);
-  opacity: 1;
+  opacity: .96;
 }
 
 .release-platform img{
@@ -2067,6 +2084,7 @@ body.is-loaded{
 @media (max-width: 780px){
   .release-item{
     padding: 14px 15px;
+    border-radius: 18px;
   }
 
   .release-row{
