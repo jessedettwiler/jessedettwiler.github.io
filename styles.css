@@ -2040,3 +2040,58 @@ body.is-loaded{
   color: rgba(255,255,255,.92);
   fill: rgba(255,255,255,.92);
 }
+.release-row{
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background .22s ease;
+}
+
+.release-row::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 20%,
+    rgba(255,255,255,.07) 50%,
+    rgba(255,255,255,0) 80%
+  );
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+}
+
+.release-row:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.18);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+.release-row:hover::before{
+  transform: translateX(120%);
+}
+
+.release-platform{
+  transition: transform .22s ease, opacity .22s ease;
+  opacity: .82;
+}
+
+.release-row:hover .release-platform{
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.release-title{
+  transition: color .22s ease;
+}
+
+.release-row:hover .release-title{
+  color: #fff;
+}
