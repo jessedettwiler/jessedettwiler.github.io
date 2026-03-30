@@ -2153,7 +2153,7 @@ body.is-loaded{
   color: rgba(255,255,255,.78);
 }
 
-.essentials-platform-grid{
+.essentials-card .dsp-grid.dsp-grid--logos.essentials-platform-grid{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
@@ -2161,7 +2161,7 @@ body.is-loaded{
   max-width: 760px;
 }
 
-.essentials-card .dsp-logo{
+.essentials-card .dsp.dsp-logo{
   min-height: 64px;
   padding: 0 18px;
   border-radius: 17px;
@@ -2185,7 +2185,7 @@ body.is-loaded{
     box-shadow .18s ease;
 }
 
-.essentials-card .dsp-logo:hover{
+.essentials-card .dsp.dsp-logo:hover{
   transform: translateY(-1px);
   background: linear-gradient(
     180deg,
@@ -2198,7 +2198,7 @@ body.is-loaded{
     0 10px 22px rgba(0,0,0,.12);
 }
 
-.essentials-card .dsp-logo img{
+.essentials-card .dsp.dsp-logo img{
   width: 19px;
   height: 19px;
   flex: 0 0 19px;
@@ -2207,7 +2207,7 @@ body.is-loaded{
   opacity: .9;
 }
 
-.essentials-card .dsp-logo span{
+.essentials-card .dsp.dsp-logo span{
   font-size: .95rem;
   font-weight: 600;
   line-height: 1;
@@ -2215,7 +2215,7 @@ body.is-loaded{
 }
 
 @media (max-width: 900px){
-  .essentials-platform-grid{
+  .essentials-card .dsp-grid.dsp-grid--logos.essentials-platform-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
   }
@@ -2248,17 +2248,17 @@ body.is-loaded{
 }
 
 @media (max-width: 560px){
-  .essentials-platform-grid{
+  .essentials-card .dsp-grid.dsp-grid--logos.essentials-platform-grid{
     grid-template-columns: 1fr;
   }
 
-  .essentials-card .dsp-logo{
+  .essentials-card .dsp.dsp-logo{
     min-height: 60px;
     padding: 0 16px;
     border-radius: 15px;
   }
 
-  .essentials-card .dsp-logo span{
+  .essentials-card .dsp.dsp-logo span{
     font-size: .93rem;
   }
 }
