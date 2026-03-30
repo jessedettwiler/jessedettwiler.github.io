@@ -2073,3 +2073,182 @@ body.is-loaded{
     height: 20px;
   }
 }
+/* =========================
+   ESSENTIALS PLAYLIST
+========================= */
+
+.essentials-card{
+  padding: 30px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 14px 34px rgba(0,0,0,.14);
+}
+
+.essentials-head{
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.essentials-eyebrow{
+  margin: 0 0 10px 0;
+  font-size: .78rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  opacity: .68;
+  font-weight: 700;
+}
+
+.essentials-head h2{
+  margin: 0 0 12px 0;
+  font-size: 2rem;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+}
+
+.essentials-intro{
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.03rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.88);
+}
+
+.essentials-player-shell{
+  margin-top: 4px;
+  margin-bottom: 28px;
+  padding: 14px;
+  border-radius: 26px;
+  background: rgba(32,50,17,.34);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.03),
+    0 16px 36px rgba(0,0,0,.16);
+}
+
+.essentials-player{
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.14);
+}
+
+.essentials-player iframe{
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.essentials-platforms-wrap{
+  padding-top: 4px;
+}
+
+.essentials-platforms-label{
+  margin: 0 0 16px 0;
+  font-size: .95rem;
+  color: rgba(255,255,255,.78);
+}
+
+.essentials-platform-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 0;
+}
+
+.essentials-card .dsp-logo{
+  min-height: 66px;
+  padding: 0 18px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 8px 20px rgba(0,0,0,.10);
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+.essentials-card .dsp-logo:hover{
+  transform: translateY(-1px);
+  background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
+  border-color: rgba(255,255,255,.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 12px 24px rgba(0,0,0,.12);
+}
+
+.essentials-card .dsp-logo img{
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: .9;
+}
+
+.essentials-card .dsp-logo span{
+  font-size: .96rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px){
+  .essentials-platform-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px){
+  .essentials-card{
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .essentials-head h2{
+    font-size: 1.7rem;
+  }
+
+  .essentials-intro{
+    font-size: .98rem;
+    line-height: 1.7;
+  }
+
+  .essentials-player-shell{
+    padding: 10px;
+    border-radius: 22px;
+    margin-bottom: 24px;
+  }
+
+  .essentials-player{
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 560px){
+  .essentials-platform-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .essentials-card .dsp-logo{
+    min-height: 62px;
+    padding: 0 16px;
+    border-radius: 16px;
+  }
+
+  .essentials-card .dsp-logo span{
+    font-size: .94rem;
+  }
+}
