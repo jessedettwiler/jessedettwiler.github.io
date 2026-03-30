@@ -1906,3 +1906,124 @@ body.is-loaded{
     border-radius:18px;
   }
 }
+/* =========================
+   DISCOGRAPHY
+========================= */
+
+.discography-intro{
+  margin: 0 0 22px 0;
+}
+
+.release-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.release-item{
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 8px 24px rgba(0,0,0,.10);
+}
+
+.release-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.release-copy{
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.release-title{
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255,255,255,.96);
+  letter-spacing: .01em;
+}
+
+.release-meta{
+  display: block;
+  margin-top: 4px;
+  font-size: .94rem;
+  color: rgba(255,255,255,.68);
+}
+
+.release-platforms{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.release-platform{
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .9;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.release-platform:hover{
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.release-platform img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.release-platform:focus-visible{
+  outline: 2px solid rgba(255,255,255,.45);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.subhead{
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+.subhead:first-of-type{
+  margin-top: 0;
+}
+
+@media (max-width: 780px){
+  .release-item{
+    padding: 14px 15px;
+  }
+
+  .release-row{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .release-platforms{
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 12px;
+  }
+
+  .release-platform{
+    width: 20px;
+    height: 20px;
+  }
+}
