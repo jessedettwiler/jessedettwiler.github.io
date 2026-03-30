@@ -1977,15 +1977,11 @@ body.is-loaded{
 }
 
 .release-row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  display: block;
 }
 
 .release-copy{
   min-width: 0;
-  flex: 1 1 auto;
 }
 
 .release-title{
@@ -2018,9 +2014,9 @@ body.is-loaded{
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 0 0 auto;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  margin-top: 10px;
 }
 
 .release-platform{
@@ -2087,16 +2083,9 @@ body.is-loaded{
     border-radius: 18px;
   }
 
-  .release-row{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .release-platforms{
-    width: 100%;
-    justify-content: flex-start;
-    margin-top: 10px;
     gap: 12px;
+    margin-top: 10px;
   }
 
   .release-platform{
