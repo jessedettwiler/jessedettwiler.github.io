@@ -2027,3 +2027,16 @@ body.is-loaded{
     height: 20px;
   }
 }
+.release-platform img,
+.release-item img {
+  filter: brightness(0) invert(1);
+  opacity: .9;
+}
+
+.release-platform svg,
+.release-platform i,
+.release-item svg,
+.release-item i {
+  color: rgba(255,255,255,.92);
+  fill: rgba(255,255,255,.92);
+}
