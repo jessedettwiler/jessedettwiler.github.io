@@ -2155,24 +2155,29 @@ body.is-loaded{
 
 .essentials-platform-grid{
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-top: 0;
+  max-width: 760px;
 }
 
 .essentials-card .dsp-logo{
-  min-height: 66px;
+  min-height: 64px;
   padding: 0 18px;
-  border-radius: 18px;
+  border-radius: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 11px;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.028)
+  );
+  border: 1px solid rgba(255,255,255,.11);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.04),
-    0 8px 20px rgba(0,0,0,.10);
+    inset 0 1px 0 rgba(255,255,255,.035),
+    0 8px 18px rgba(0,0,0,.10);
   transition:
     transform .18s ease,
     border-color .18s ease,
@@ -2182,24 +2187,28 @@ body.is-loaded{
 
 .essentials-card .dsp-logo:hover{
   transform: translateY(-1px);
-  background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
-  border-color: rgba(255,255,255,.18);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.07),
+    rgba(255,255,255,.038)
+  );
+  border-color: rgba(255,255,255,.16);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.05),
-    0 12px 24px rgba(0,0,0,.12);
+    inset 0 1px 0 rgba(255,255,255,.045),
+    0 10px 22px rgba(0,0,0,.12);
 }
 
 .essentials-card .dsp-logo img{
-  width: 20px;
-  height: 20px;
-  flex: 0 0 20px;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
   display: block;
   filter: brightness(0) invert(1);
   opacity: .9;
 }
 
 .essentials-card .dsp-logo span{
-  font-size: .96rem;
+  font-size: .95rem;
   font-weight: 600;
   line-height: 1;
   white-space: nowrap;
@@ -2208,6 +2217,7 @@ body.is-loaded{
 @media (max-width: 900px){
   .essentials-platform-grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
   }
 }
 
@@ -2243,12 +2253,12 @@ body.is-loaded{
   }
 
   .essentials-card .dsp-logo{
-    min-height: 62px;
+    min-height: 60px;
     padding: 0 16px;
-    border-radius: 16px;
+    border-radius: 15px;
   }
 
   .essentials-card .dsp-logo span{
-    font-size: .94rem;
+    font-size: .93rem;
   }
 }
