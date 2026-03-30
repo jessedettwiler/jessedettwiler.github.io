@@ -1924,7 +1924,6 @@ body.is-loaded{
 
 .release-item{
   position: relative;
-  overflow: hidden;
   margin: 0;
   padding: 17px 18px;
   border-radius: 20px;
@@ -1944,21 +1943,6 @@ body.is-loaded{
     background .26s ease;
 }
 
-.release-item::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    rgba(255,255,255,0) 18%,
-    rgba(255,255,255,.05) 50%,
-    rgba(255,255,255,0) 82%
-  );
-  transform: translateX(-130%);
-  transition: transform .75s ease;
-}
-
 .release-item:hover{
   transform: translateY(-2px);
   border-color: rgba(255,255,255,.18);
@@ -1970,10 +1954,6 @@ body.is-loaded{
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.06),
     0 14px 30px rgba(0,0,0,.14);
-}
-
-.release-item:hover::before{
-  transform: translateX(130%);
 }
 
 .release-row{
