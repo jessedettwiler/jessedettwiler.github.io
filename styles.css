@@ -561,7 +561,7 @@ body{
 
 .bio-lede,
 .bio-text p{
-  font-size:1rem;
+  font-size:1.02rem;
   line-height:1.75;
   max-width:62ch;
 }
