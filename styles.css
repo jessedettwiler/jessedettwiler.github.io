@@ -2416,3 +2416,12 @@ body.is-loaded{
     align-items: center;
   }
 }
+.page-folk-hop .split-panel{
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.16);
+}
+
+.page-folk-hop .split-panel:hover{
+  background: rgba(255,255,255,.11);
+  border-color: rgba(255,255,255,.20);
+}
