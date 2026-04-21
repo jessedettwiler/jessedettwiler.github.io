@@ -2430,3 +2430,70 @@ body.is-loaded{
   background: rgba(255,255,255,.06) !important;
   border-color: rgba(255,255,255,.16) !important;
 }
+.split-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:18px;
+  align-items:start;
+}
+
+.folkhop-visuals-block{
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+
+.folkhop-visuals-intro{
+  max-width:720px;
+  margin-bottom:18px;
+}
+
+.folkhop-visuals-intro .eyebrow{
+  margin:0 0 10px;
+  font-size:.82rem;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+.folkhop-visuals-intro p:last-child{
+  margin:0;
+}
+
+.art-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+}
+
+.art-grid a{
+  display:block;
+  aspect-ratio:1 / 1;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.art-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+@media (max-width: 900px){
+  .split-grid{
+    grid-template-columns:1fr;
+  }
+
+  .art-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .art-grid{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:12px;
+  }
+}
