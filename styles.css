@@ -2416,12 +2416,7 @@ body.is-loaded{
     align-items: center;
   }
 }
-.page-folk-hop .split-panel{
-  background: rgba(255,255,255,.18) !important;
-  border: 1px solid rgba(255,255,255,.24) !important;
-}
-
-.page-folk-hop .split-panel:hover{
-  background: rgba(255,255,255,.22) !important;
-  border-color: rgba(255,255,255,.30) !important;
+.page-folk-hop .card{
+  background: rgba(255,255,255,.07) !important;
+  border: 1px solid rgba(255,255,255,.17) !important;
 }
