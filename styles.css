@@ -2420,3 +2420,13 @@ body.is-loaded{
   background: rgba(255,255,255,.07) !important;
   border: 1px solid rgba(255,255,255,.17) !important;
 }
+
+.page-folk-hop .split-panel{
+  background: rgba(255,255,255,.04) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+}
+
+.page-folk-hop .split-panel:hover{
+  background: rgba(255,255,255,.06) !important;
+  border-color: rgba(255,255,255,.16) !important;
+}
