@@ -2344,3 +2344,94 @@ body.is-loaded{
     align-items: flex-start;
   }
 }
+.bandcamp-card.bandcamp-card-large{
+  display: block;
+  padding: 28px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-main{
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-content{
+  min-width: 0;
+  width: 100%;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-content h2{
+  margin: 0 0 14px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-content p{
+  margin: 0 0 14px;
+  max-width: 760px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-cover{
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.16);
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-note{
+  margin: 0 0 18px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-subcard{
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-subcard-text{
+  min-width: 0;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-subcard-text strong{
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+.bandcamp-card.bandcamp-card-large .bandcamp-subcard-text span{
+  opacity: .88;
+}
+
+@media (max-width: 760px){
+  .bandcamp-card.bandcamp-card-large{
+    padding: 22px;
+  }
+
+  .bandcamp-card.bandcamp-card-large .bandcamp-main{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .bandcamp-card.bandcamp-card-large .bandcamp-cover{
+    max-width: 190px;
+  }
+
+  .bandcamp-card.bandcamp-card-large .bandcamp-subcard{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
