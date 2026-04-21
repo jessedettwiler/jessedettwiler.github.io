@@ -2262,3 +2262,85 @@ body.is-loaded{
     font-size: .93rem;
   }
 }
+.bandcamp-card-large{
+  padding: 22px;
+}
+
+.bandcamp-main{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.bandcamp-card-large .bandcamp-cover{
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.16);
+}
+
+.bandcamp-card-large .bandcamp-content h2{
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.bandcamp-card-large .bandcamp-content p{
+  margin: 0 0 14px;
+  max-width: 760px;
+}
+
+.bandcamp-note{
+  margin-top: -2px;
+}
+
+.bandcamp-card-large .bandcamp-cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.bandcamp-subcard{
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bandcamp-subcard-text{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bandcamp-subcard-text strong{
+  font-size: 1rem;
+}
+
+.bandcamp-subcard-text span{
+  opacity: .88;
+}
+
+@media (max-width: 760px){
+  .bandcamp-main{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .bandcamp-card-large .bandcamp-cover{
+    max-width: 190px;
+  }
+
+  .bandcamp-subcard{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
