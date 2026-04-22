@@ -2530,3 +2530,32 @@ body.is-loaded{
     max-width: 340px;
   }
 }
+.origins-wrap{
+  margin-top:10px;
+}
+
+.origins-text{
+  max-width:820px;
+}
+
+.origins-text p{
+  margin:0 0 16px 0;
+}
+
+.origins-text p:last-child{
+  margin-bottom:0;
+}
+
+.origins-text em{
+  font-style:italic;
+}
+
+@media (max-width: 720px){
+  .origins-text{
+    max-width:100%;
+  }
+
+  .origins-text p{
+    margin-bottom:14px;
+  }
+}
