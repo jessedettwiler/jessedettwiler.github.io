@@ -2735,3 +2735,18 @@ body.is-loaded{
     margin-top: 10px;
   }
 }
+.bio-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.pill-secondary{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+}
+
+.pill-secondary:hover{
+  background:rgba(255,255,255,.10);
+}
