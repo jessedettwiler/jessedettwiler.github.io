@@ -2906,3 +2906,14 @@ body.is-loaded{
     padding-right: 48px !important;
   }
 }
+/* Give the last Folkhopper card some breathing room */
+.folkhoppers-track::after{
+  content: "";
+  width: 70px;
+}
+
+@media (max-width: 720px){
+  .folkhoppers-track::after{
+    width: 42px;
+  }
+}
