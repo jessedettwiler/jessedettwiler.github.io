@@ -2917,3 +2917,14 @@ body.is-loaded{
     width: 42px;
   }
 }
+@media (max-width: 720px){
+  .folkhoppers-track{
+    grid-auto-columns: 72vw !important;
+    gap: 14px !important;
+    padding-right: 56px !important;
+  }
+
+  .folkhopper-card{
+    min-height: 360px !important;
+  }
+}
