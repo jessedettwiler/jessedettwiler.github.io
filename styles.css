@@ -2890,3 +2890,19 @@ body.is-loaded{
     );
   }
 }
+.folkhoppers-track{
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: calc((100% - 32px) / 3.15) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  padding-right: 70px !important;
+}
+
+@media (max-width: 720px){
+  .folkhoppers-track{
+    grid-auto-columns: 82vw !important;
+    gap: 14px !important;
+    padding-right: 48px !important;
+  }
+}
