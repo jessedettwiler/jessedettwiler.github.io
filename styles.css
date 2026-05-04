@@ -2821,3 +2821,72 @@ body.is-loaded{
     flex-basis: clamp(225px, 27vw, 258px);
   }
 }
+/* =========================
+   FOLKHOPPERS SCROLL CUE - OVERRIDE
+========================= */
+
+.folkhoppers-slider{
+  position: relative !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+
+  /* Soft fade on the right to suggest horizontal scroll */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.folkhoppers-slider::-webkit-scrollbar{
+  display: none;
+}
+
+.folkhoppers-track{
+  display: grid !important;
+  grid-auto-flow: column !important;
+  grid-auto-columns: calc((100% - 32px) / 3.28) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  padding-right: 70px !important;
+}
+
+.folkhopper-card{
+  min-width: 0 !important;
+  scroll-snap-align: start;
+}
+
+/* Mobile: one main card + a visible part of the next card */
+@media (max-width: 720px){
+  .folkhoppers-track{
+    grid-auto-columns: 78vw !important;
+    gap: 14px !important;
+    padding-right: 48px !important;
+  }
+
+  .folkhoppers-slider{
+    -webkit-mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 84%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      black 0%,
+      black 84%,
+      transparent 100%
+    );
+  }
+}
