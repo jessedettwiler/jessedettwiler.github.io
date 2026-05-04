@@ -2750,3 +2750,74 @@ body.is-loaded{
 .pill-secondary:hover{
   background:rgba(255,255,255,.10);
 }
+/* Folkhoppers horizontal scroll cue */
+.folkhoppers-slider {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.25rem;
+}
+
+.folkhoppers-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.folkhoppers-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding-right: 3rem;
+}
+
+.folkhopper-card {
+  flex: 0 0 clamp(220px, 28vw, 258px);
+  scroll-snap-align: start;
+}
+
+/* Subtle right fade to suggest more cards */
+.folkhoppers-slider::after {
+  content: "";
+  position: sticky;
+  right: 0;
+  display: block;
+  width: 58px;
+  height: 100%;
+  margin-left: -58px;
+  flex: 0 0 58px;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(86, 119, 65, 0),
+    rgba(86, 119, 65, 0.95)
+  );
+  border-radius: 0 24px 24px 0;
+}
+
+/* Mobile: show one full card + a clear preview of the next */
+@media (max-width: 700px) {
+  .folkhoppers-track {
+    gap: 0.9rem;
+    padding-right: 2.5rem;
+  }
+
+  .folkhopper-card {
+    flex-basis: 78vw;
+    max-width: 285px;
+  }
+
+  .folkhoppers-slider::after {
+    width: 44px;
+    margin-left: -44px;
+    flex-basis: 44px;
+  }
+}
+
+/* Desktop: show three cards + a small piece of the next one */
+@media (min-width: 701px) {
+  .folkhopper-card {
+    flex-basis: clamp(225px, 27vw, 258px);
+  }
+}
