@@ -2928,3 +2928,19 @@ body.is-loaded{
     min-height: 360px !important;
   }
 }
+/* Milestone slider image stability */
+.ms-slide img{
+  width:100%;
+  aspect-ratio:5 / 3;
+  height:auto;
+  max-height:460px;
+  object-fit:cover;
+  display:block;
+}
+
+@media (max-width: 720px){
+  .ms-slide img{
+    aspect-ratio:4 / 3;
+    max-height:none;
+  }
+}
