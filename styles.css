@@ -12,8 +12,70 @@
 
 html{ scroll-behavior: smooth; }
 
-html, body{
-  height: 100%;
+html, body{/* Folk-Hop Radio section */
+.fhr-card{
+  overflow:hidden;
+}
+
+.fhr-header{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 180px;
+  gap:28px;
+  align-items:start;
+}
+
+.fhr-header h2{
+  margin-top:0;
+}
+
+.fhr-badge{
+  margin:0;
+  justify-self:end;
+}
+
+.fhr-badge img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
+  border-radius:28px;
+  display:block;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 14px 32px rgba(0,0,0,.18);
+}
+
+.fhr-player{
+  margin-top:22px;
+  max-width:560px;
+}
+
+.fhr-actions{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+@media (max-width: 720px){
+  .fhr-header{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .fhr-badge{
+    justify-self:start;
+    order:-1;
+  }
+
+  .fhr-badge img{
+    width:110px;
+    height:110px;
+    border-radius:22px;
+  }
+
+  .fhr-player{
+    max-width:100%;
+  }
+}00%;
   margin: 0;
   background: var(--bg);
 }
