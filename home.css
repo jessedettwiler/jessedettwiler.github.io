@@ -1,0 +1,204 @@
+/* Styles réservés à la page d’accueil */
+
+body.c4c-home {
+  --home-cream: #f6f2e8;
+  --home-ink: #293421;
+}
+
+/* Menu lisible au-dessus des sections crème */
+.c4c-home .site-header {
+  background: #55743df5;
+  border-radius: 16px;
+}
+
+.c4c-home .home-content {
+  opacity: 1;
+}
+
+/* Présentation */
+.c4c-home .home-hero {
+  padding: 132px 24px 48px;
+  text-align: center;
+  color: var(--home-cream);
+  background: #6f8e49;
+}
+
+.c4c-home .home-portrait {
+  display: block;
+  width: clamp(150px, 18vw, 220px);
+  height: auto;
+  margin: 0 auto 22px;
+  border-radius: 50%;
+}
+
+.c4c-home .home-hero h1 {
+  margin: 0;
+  font: normal clamp(36px, 5vw, 64px)/1.12 Georgia, serif;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.c4c-home .home-intro {
+  margin: 20px 0 26px;
+  font-size: 16px;
+}
+
+/* Boutons */
+.c4c-home .home-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  min-height: 46px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: #55743d;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.c4c-home .home-button:hover {
+  background: #40592e;
+}
+
+.c4c-home .home-button-light {
+  background: var(--home-cream);
+  color: var(--home-ink);
+}
+
+.c4c-home .home-button-light:hover {
+  background: #e9e1d0;
+}
+
+.c4c-home .home-button:focus-visible {
+  outline: 3px solid #b87928;
+  outline-offset: 4px;
+}
+
+/* Plateformes musicales */
+.c4c-home .home-icons-overlay {
+  position: static;
+  transform: none;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto 0;
+  gap: 8px;
+}
+
+.c4c-home .home-icons-overlay a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  opacity: .9;
+}
+
+/* Les trois rubriques */
+.c4c-home .home-discover {
+  padding: 48px 24px 64px;
+  background: var(--home-cream);
+  color: var(--home-ink);
+}
+
+.c4c-home .home-grid {
+  max-width: 1120px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.c4c-home .home-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #dcd9cd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 120px;
+}
+
+.c4c-home .home-eyebrow {
+  margin: 0 0 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.c4c-home .home-card h2 {
+  margin: 0 0 12px;
+  font: normal clamp(24px, 2.2vw, 30px)/1.2 Georgia, serif;
+  overflow-wrap: break-word;
+}
+
+.c4c-home .home-description {
+  margin: 0 0 22px;
+  color: #505648;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Date de sortie */
+.c4c-home .home-release-date {
+  display: block;
+  margin: -10px 0 22px;
+  color: #59614f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.c4c-home .home-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin-top: auto;
+  border-radius: 4px;
+}
+
+.c4c-home .home-card .home-button {
+  margin-top: 20px;
+}
+
+/* Tablette et mobile */
+@media (max-width: 900px) {
+  .c4c-home .home-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+
+  .c4c-home .home-hero {
+    padding-top: 132px;
+  }
+
+  .c4c-home .home-card h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .c4c-home .home-discover {
+    padding: 28px 16px 40px;
+  }
+
+  .c4c-home .home-card {
+    padding: 20px;
+  }
+
+  .c4c-home .home-hero {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(body.c4c-home) {
+    scroll-behavior: auto;
+  }
+}
