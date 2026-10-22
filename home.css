@@ -296,3 +296,10 @@ body.c4c-home {
     padding: 120px 20px 36px;
   }
 }
+/* Même police que les autres pages */
+.c4c-home .home-hero h1,
+.c4c-home .home-card h2 {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: normal;
+}
