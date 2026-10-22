@@ -202,3 +202,97 @@ body.c4c-home {
     scroll-behavior: auto;
   }
 }
+/* Ajustements : accueil vert uni et plein écran */
+
+body.c4c-home {
+  --home-green: #55743D;
+  background: var(--home-green);
+  color: #fff;
+}
+
+/* Suppression du bandeau derrière le menu */
+.c4c-home .site-header {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Premier écran complet :
+   les trois rubriques restent sous la ligne de flottaison */
+.c4c-home .home-hero {
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 120px 24px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--home-green);
+  color: #fff;
+}
+
+.c4c-home .home-hero > * {
+  flex-shrink: 0;
+}
+
+.c4c-home .home-hero h1,
+.c4c-home .home-intro {
+  color: #fff;
+}
+
+/* Même vert pour la partie inférieure */
+.c4c-home .home-discover {
+  background: var(--home-green);
+  color: #fff;
+}
+
+/* Cartes transparentes, contours discrets */
+.c4c-home .home-card {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .22);
+  box-shadow: none;
+}
+
+.c4c-home .home-eyebrow,
+.c4c-home .home-card h2,
+.c4c-home .home-description,
+.c4c-home .home-release-date {
+  color: #fff;
+}
+
+/* Boutons assortis au fond, texte blanc */
+.c4c-home .home-button,
+.c4c-home .home-button-light {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .55);
+}
+
+.c4c-home .home-button:hover,
+.c4c-home .home-button-light:hover {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  border-color: #fff;
+}
+
+.c4c-home .home-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Icônes musicales blanches */
+.c4c-home .home-icons-overlay a,
+.c4c-home .home-icons-overlay img {
+  opacity: 1;
+}
+
+/* Espacement adapté au mobile */
+@media (max-width: 600px) {
+  .c4c-home .home-hero {
+    padding: 120px 20px 36px;
+  }
+}
