@@ -318,3 +318,54 @@ body.c4c-home {
     line-height: 1.5;
   }
 }
+/* Animation d’arrivée — mobile et ordinateur */
+@keyframes c4c-portrait-enter {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes c4c-content-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Empêche le portrait de déborder pendant son arrivée */
+.c4c-home .home-hero {
+  overflow: hidden;
+}
+
+/* Portrait : départ hors écran, arrivée en douceur */
+.c4c-home .home-portrait {
+  animation: c4c-portrait-enter 1.5s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+/* Les autres éléments apparaissent après le portrait */
+.c4c-home .home-hero > :not(.home-portrait) {
+  animation: c4c-content-enter .8s ease-out 1.5s both;
+}
+
+/* Respect des préférences de réduction des animations */
+@media (prefers-reduced-motion: reduce) {
+  .c4c-home .home-portrait,
+  .c4c-home .home-hero > :not(.home-portrait) {
+    animation: none;
+  }
+}
