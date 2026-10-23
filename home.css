@@ -307,7 +307,7 @@ body.c4c-home {
 /* Hiérarchie du titre et du sous-titre sur mobile */
 @media (max-width: 600px) {
   .c4c-home .home-hero h1 {
-    font-size: clamp(24px, 7.5vw, 40px);
+    font-size: clamp(27px, 7.5vw, 40px);
     white-space: nowrap;
     text-wrap: nowrap;
     letter-spacing: -0.03em;
