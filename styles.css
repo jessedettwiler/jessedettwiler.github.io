@@ -2493,3 +2493,69 @@ body.is-loaded main{
 body.is-loaded{
   opacity: 1;
 }
+
+/* SAMPLE PACK SECTION */
+
+.sample-pack-layout {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.sample-pack-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.sample-pack-text {
+  min-width: 0;
+}
+
+.sample-pack-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin: 0 0 12px;
+}
+
+.sample-pack-text h2 {
+  margin: 0 0 14px;
+}
+
+.sample-pack-text .muted {
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.sample-pack-text .pill {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .sample-pack-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .sample-pack-cover {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .sample-pack-text {
+    text-align: center;
+  }
+
+  .sample-pack-text h2 {
+    font-size: 24px;
+  }
+}
